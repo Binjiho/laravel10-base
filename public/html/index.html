@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="Author" content="APKASS 2026">
+    <meta name="Keywords" content="APKASS 2026">
+    <meta name="description" content="APKASS 2026">
+    <title>APKASS 2026</title>
+    <link rel="icon" href="/assets/image/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/jquery.rwdImageMaps.js"></script>
+    <script src="/assets/js/common.js"></script>
+</head>
+<body>
+    <!-- 
+        main일 때 calss="main"
+        sub일 때 class="sub"
+    -->
+    <div class="wrap main">
+        <!-- header -->
+        <div id="dim" class="js-dim"></div>
+        <header id="header" class="js-header">
+            <div class="header-wrap inner-layer">
+                
+                <h1 class="header-logo">
+                    <a href="#n">헤더 로고</a>
+                </h1>
+                <div class="util-wrap">
+                    <div class="dday-wrap type-w">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today, YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-open js-btn-menu-open">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="gnb">
+                <div class="m-gnb-header">
+                    <div class="dday-wrap type-m">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin_w.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <div class="gnb-wrap inner-layer">
+                    <ul class="gnb js-gnb">
+                        <li>
+                            <a href="#n">ABOUT</a>
+                            <ul>
+                                <li><a href="#">Welcome Message</a></li>
+                                <li><a href="#">Committee</a></li>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">News & Notice</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">PROGRAM</a>
+                            <ul>
+                                <li><a href="#">Program at a Glance</a></li>
+                                <li><a href="#">Scientific Program</a></li>
+                                <li><a href="#">Invited Speakers</a></li>
+                                <li><a href="#">Networking Events</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ABSTRACT</a>
+                            <ul>
+                                <li><a href="#">Abstract Submission</a></li>
+                                <li><a href="#">Awards</a></li>
+                                <li><a href="#">Presentation Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">REGISTRATION</a>
+                            <ul>
+                                <li><a href="#">Registration Guideline</a></li>
+                                <li><a href="#">Online Registration</a></li>
+                                <li><a href="#">Visa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ACCOMMODATION</a>
+                            <ul>
+                                <li><a href="#">Accommodation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">SPONSORSHIP</a>
+                            <ul>
+                                <li><a href="#">Sponsorship Opportunities</a></li>
+                                <li><a href="#">Our Sponsors</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">INFORMATION</a>
+                            <ul>
+                                <li><a href="#">Venue</a></li>
+                                <li><a href="#">Transportation</a></li>
+                                <li><a href="#">Tour Information</a></li>
+                                <li><a href="#">Useful Information</a></li>
+                                <li><a href="#">About Incheon</a></li>
+                                <li><a href="#">About Korea</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-close js-btn-menu-close"><span class="hide">메뉴 닫기</span></button>
+            </nav>
+        </header>
+        <!-- //header -->
+        
+        <section id="container">
+            <article class="main-visual">
+                <div class="main-visual-wrap js-main-visual cf">
+                    <div class="main-visual-con">
+                        <picture>
+                            <source srcset="/assets/image/main/key_visual_m.png" media="(max-width: 1024px)">
+                            <img src="/assets/image/main/key_visual.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="main-visual-con">
+                        <picture>
+                            <source srcset="/assets/image/main/key_visual_m.png" media="(max-width: 1024px)">
+                            <img src="/assets/image/main/key_visual.png" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <ul class="main-visual-menu">
+                    <li>
+                        <p class="title">
+                            Abstract Submission Opens
+                            <span>January 5, 2026</span>
+                        </p>
+                        <p class="dday">D-100</p>
+                    </li>
+                    <li>
+                        <p class="title">
+                            Acceptance Notice
+                            <span>April 30, 2026</span>
+                        </p>
+                        <p class="dday">D-100</p>
+                    </li>
+                    <li>
+                        <p class="title">
+                            Registration Opens
+                            <span>February 2, 2026</span>
+                        </p>
+                        <p class="dday">D-100</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="main-contents main-quick" id="section2">
+                <ul class="main-quick-menu inner-layer">
+                    <li>
+                        <a href="#n">
+                            <p>ABSTRACT</p>
+                            <div class="icon">
+                                <img src="/assets/image/main/ico_quick01.png" alt="">
+                            </div>
+                        </a>
+                    </li>                        
+                    <li>
+                        <a href="#n">
+                            <p>REGISTRATION</p>
+                            <div class="icon">
+                                <img src="/assets/image/main/ico_quick02.png" alt="">
+                            </div>
+                        </a>
+                    </li>                        
+                    <li>
+                        <a href="#n">
+                            <p>PROGRAM</p>
+                            <div class="icon">
+                                <img src="/assets/image/main/ico_quick03.png" alt="">
+                            </div>
+                        </a>
+                    </li>                        
+                    <li>
+                        <a href="#n">
+                            <p>MY PAGE</p>
+                            <div class="icon">
+                                <img src="/assets/image/main/ico_quick04.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                </ul> 
+            </article>
+
+            <article class="main-contents inner-layer" id="section3">
+                <div class="main-board">
+                    <div class="main-title-wrap">
+                        <h3>NEWS & NOTICE</h3>
+                    </div>
+                    <ul class="main-board-list">
+                        <li>
+                            <a href="#n">
+                                <p class="subject subject ellipsis">제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</p>
+                                <p class="date">YYYY-MM-DD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <p class="subject ellipsis">KSGO 2026 Website OPEN!</p>
+                                <p class="date">YYYY-MM-DD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <p class="subject ellipsis">KSGO 2026 Website OPEN!</p>
+                                <p class="date">YYYY-MM-DD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <p class="subject ellipsis">KSGO 2026 Website OPEN!</p>
+                                <p class="date">YYYY-MM-DD</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <p class="subject ellipsis">KSGO 2026 Website OPEN!</p>
+                                <p class="date">YYYY-MM-DD</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-video-wrap">
+                    <div class="main-video">
+                        <iframe src="https://player.vimeo.com/video/1140767339?h=24f8a27d3a&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&muted=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="main-contents inner-layer" id="section4">
+                <div class="main-title-wrap">
+                    <h3>Key Speakers</h3>
+                    <a href="/" class="more-view">More View +</a>
+                </div>
+                <div class="speaker-rolling-wrap">
+                    <div class="speaker-rolling js-speaker-rolling">
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-wrap">
+                                <img src="/assets/image/main/img_thum_speaker.png" alt="">
+                            </div>
+                            <div class="text-wrap">
+                                <p class="title">TBD</p>
+                                <p class="des">TBD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-arrow">
+                        <a href="#n" class="slick-prev slick-arrow">이전</a>
+                        <a href="#n" class="slick-next slick-arrow">다음</a>
+                    </div>
+                </div>
+            </article>
+        </section> 
+        
+        <section class="sponsor-wrap  inner-layer main-contents">
+            <div class="main-title-wrap">
+                <h3>SPONSORED BY</h3>
+            </div>
+            <div class="sponsor-rolling-wrap">
+                <div class="sponsor-rolling js-sponsor-rolling">
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                    <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/include/footer.inc';
+?>

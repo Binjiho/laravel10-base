@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="Author" content="APKASS 2026">
+    <meta name="Keywords" content="APKASS 2026">
+    <meta name="description" content="APKASS 2026">
+    <title>APKASS 2026</title>
+    <link rel="icon" href="/assets/image/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/jquery.rwdImageMaps.js"></script>
+    <script src="/assets/js/common.js"></script>
+</head>
+<body>
+    <!-- 
+        main일 때 calss="main"
+        sub일 때 class="sub"
+    -->
+    <div class="wrap sub">
+        <!-- header -->
+        <div id="dim" class="js-dim"></div>
+        <header id="header" class="js-header">
+            <div class="header-wrap inner-layer">
+                
+                <h1 class="header-logo">
+                    <a href="#n">헤더 로고</a>
+                </h1>
+                <div class="util-wrap">
+                    <div class="dday-wrap type-w">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today, YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-open js-btn-menu-open">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="gnb">
+                <div class="m-gnb-header">
+                    <div class="dday-wrap type-m">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin_w.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <div class="gnb-wrap inner-layer">
+                    <ul class="gnb js-gnb">
+                        <li>
+                            <a href="#n">ABOUT</a>
+                            <ul>
+                                <li><a href="#">Welcome Message</a></li>
+                                <li><a href="#">Committee</a></li>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">News & Notice</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">PROGRAM</a>
+                            <ul>
+                                <li><a href="#">Program at a Glance</a></li>
+                                <li><a href="#">Scientific Program</a></li>
+                                <li><a href="#">Invited Speakers</a></li>
+                                <li><a href="#">Networking Events</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ABSTRACT</a>
+                            <ul>
+                                <li><a href="#">Abstract Submission</a></li>
+                                <li><a href="#">Awards</a></li>
+                                <li><a href="#">Presentation Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">REGISTRATION</a>
+                            <ul>
+                                <li><a href="#">Registration Guideline</a></li>
+                                <li><a href="#">Online Registration</a></li>
+                                <li><a href="#">Visa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ACCOMMODATION</a>
+                            <ul>
+                                <li><a href="#">Accommodation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">SPONSORSHIP</a>
+                            <ul>
+                                <li><a href="#">Sponsorship Opportunities</a></li>
+                                <li><a href="#">Our Sponsors</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">INFORMATION</a>
+                            <ul>
+                                <li><a href="#">Venue</a></li>
+                                <li><a href="#">Transportation</a></li>
+                                <li><a href="#">Tour Information</a></li>
+                                <li><a href="#">Useful Information</a></li>
+                                <li><a href="#">About Incheon</a></li>
+                                <li><a href="#">About Korea</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-close js-btn-menu-close"><span class="hide">메뉴 닫기</span></button>
+            </nav>
+        </header>
+        <!-- //header -->
+
+<section id="container">
+    <article class="sub-visual">
+        <p class="hide">APKASS 2026 Korea & ICKAS 2026 | September 10 (Thu) - 12 (Sat), 2026 | Grnad Hyatt, Incheon, Korea</p>
+    </article>
+    <article class="sub-menu-wrap">
+        <div class="sub-menu inner-layer">
+            <ul class="sub-menu-list js-sub-menu-list">
+                <li class="sub-menu-depth02">
+                    <a href="#n" class="btn-sub-menu js-btn-sub-menu">Welcome Message</a>
+                    <ul>
+                        <li class="on"><a href="#n">Welcome Message</a></li>
+                        <li><a href="#n">Committee</a></li>
+                        <li><a href="#n">Overview</a></li>
+                        <li><a href="#n">Contact Us</a></li>
+                        <li><a href="#n">News & Notice</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </article>
+    <article class="sub-contents">
+        <div class="sub-conbox inner-layer">
+            
+            <div class="tab-wrap">
+                <div class="sub-tab-wrap">
+                    <ul class="sub-tab-menu js-tab-menu">
+                        <li class="on"><a href="#n">Welcome Message from President of APKASS</a></li>
+                        <li><a href="#n">Welcome Message from Congress Chairman</a></li>
+                    </ul>
+                </div>
+
+                <div class="sub-tab-con js-tab-con" style="display: block;">
+                    <div class="welcome-wrap">
+                        <div class="text-con">
+                            <p>Dear colleagues and distinguished guests,</p>
+                            <p>As the president of APKASS (Asia-Pacific Knee, Arthroscopy, Arthroplasty, Shoulder, and Sports Medicine Society) and a proud Korean, it is my great honor to host this conference in Incheon. </p>
+                            <p>APKASS has long been a leading organization in joint surgery, arthroscopy, and sports medicine, and our conference has become a key platform for advancing research and clinical practices. With the recent expansion to include Shoulder and Arthroplasty in 2025, APKASS continues to grow, addressing the diverse needs of our members and promoting advancements in musculoskeletal health.</p>
+                            <p>This year’s conference will bring together experts from various specialties, further strengthening APKASS’s position as a global leader in our field. We are honored to have specialists from renowned organizations such as ISAKOS, SLARD, AOSSM, ESSKA, and ICRS whose presence will offer invaluable opportunities for collaboration and knowledge exchange.</p>
+                            <p>I hope this conference provides you with opportunities for academic development, networking, and lasting connections. Once again, welcome to Incheon, and I look forward to the inspiring exchanges ahead.</p>
+                        </div>
+                        <div class="name-box text-right">
+                            <div class="img-wrap">
+                                <img src="/assets/image/sub/img_welcome01.png" alt="">
+                            </div>
+                            <p class="name">
+                                <strong>Kyoung Ho Yoon, MD, PhD</strong><br>
+                                President, APKASS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-tab-con js-tab-con">
+                    <div class="welcome-wrap">
+                        <div class="text-con">
+                            <p>Dear Colleagues and Friends,</p>
+                            <p>On behalf of the Organizing Committee, it is my great pleasure to welcome you to the APKASS 2026 conference, held in conjunction with the 2026 Annual International Congress of the Korean Arthroscopy Society (APKASS 2026 Korea & ICKAS 2026), co-hosted by Asia-Pacific Knee, Arthroscopy, Arthroplasty, Shoulder, and Sports Medicine Society and the Korean Arthroscopy Society. This event is particularly special as it marks the first time the APKASS Congress is being held in South Korea. </p>
+                            <p>The theme of this year, <strong class="italic">'From Asia-Pacific Heritage to Global Horizons’</strong>, reflects our commitment to advancing joint surgery and sports medicine worldwide, fostering collaboration and sharing cutting-edge research across various disciplines.</p>
+                            <p>In line with this vision, the APKASS 2026 will feature a diverse range of sessions, including joint-specific discussions on Knee, Shoulder, Hip & Pelvis, Foot & Ankle, Wrist & Elbow, and Spine. Attendees can expect in-depth insights into orthopedic research, encompassing arthroscopy, arthroplasty, and sports medicine. The scientific program will include Plenary and Keynote Lectures, ICL Sessions, Free Paper Presentations, and Poster Exhibitions, providing plentiful opportunities for knowledge exchange. This year marks our inaugural Live Surgery Symposium, and we will also hold combined sessions with international organizations such as ISAKOS, SLARD, ASSOM, ESSKA, AFSM, and ICRS facilitating collaboration with global experts. </p>
+                            <p>As you participate in the APKASS 2026, we encourage you to experience the beauty of Incheon and the stunning autumn weather of Korea. The convention venue, located by the sea, offers an ideal setting for both academic discussions and relaxation.</p>
+                            <p>We look forward to welcoming you to Incheon and hope you have a rewarding and memorable experience.</p>
+                        </div>
+                        <div class="name-box text-right">
+                            <div class="img-wrap">
+                                <img src="/assets/image/sub/img_welcome02.png" alt="">
+                            </div>
+                            <p class="name">
+                                <strong>Joo Han Oh, MD, PhD</strong><br>
+                                Congress Chairman, APKASS 2026 Korea
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--// tab-wrap -->
+
+        </div>
+    </article>
+</section>
+
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="inner-layer">
+                <div class="footer-wrap">
+                    <p class="title">APKASS 2026 Korea & ICKAS 2026 Secretariat</p>
+                    <p class="des">Convenein International Convention Services, Inc.</p>
+                    <dl>
+                        <dt>Tel:</dt>
+                        <dd><a href="tel:02-6278-8590"> +82-2-6278-8590</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>Email:</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="mailto:sci@apkass2026korea.org">
+                                    <span>Abstract</span>
+                                    <span>sci@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:reg@apkass2026korea.org">
+                                    <span>Registration</span>
+                                    <span>reg@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:sci@apkass2026korea.org">
+                                    <span>Program & Speakers</span>
+                                    <span>sci@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:apkass@apkass2026korea.org">
+                                    <span>General</span>
+                                    <span>apkass@apkass2026korea.org</span>
+                                </a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Operating Hours:</dt>
+                        <dd>10:00 - 18:00 (KST)</dd>
+                    </dl>
+                </div>
+                <div class="host-wrap">
+                    <p>Hosted by</p>
+                    <ul>
+                        <li><a href="/">
+                            <img src="/assets/image/common/f_logo1.png" alt="APKASS">
+                        </a></li>
+                        <li><a href="/">
+                            <img src="/assets/image/common/f_logo2.png" alt="Korean Arthroscopy Society">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">Copyright 2025 © APKASS 2026 Korea & ICKAS 2026 Secretariat, Convenein. All Rights Reserved.</p>
+            <!--
+            <button type="button" class="btn-top js-btn-top">
+                <img src="/assets/image/common/img_top.png" alt="">
+            </button>
+            -->
+        </footer>
+        <!-- //footer -->
+        </div>
+    </body>
+</html>

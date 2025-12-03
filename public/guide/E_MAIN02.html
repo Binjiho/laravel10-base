@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>APKASS 2026 Korea & ICKAS 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet">
+
+<style>
+/* ---------- Base ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto','LineSeed',system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#222;background:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1400px;margin:0 auto;padding:0 20px}
+
+/* LineSeed */
+@font-face{font-family:'LineSeed';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Th.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'LineSeed';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Rg.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'LineSeed';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');font-weight:700;font-display:swap}
+
+/* ---------- Header (Top) ---------- */
+.top-bar{position:relative;background:#fff;border-bottom:1px solid #e9edf3}
+.top-bar .container{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 20px}
+.logo img{height:42px}
+.util {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.util .btn {
+  font-size: 13px;
+  border: 1px solid #d7dde7;
+  border-radius: 30px;
+  padding: 6px 14px 6px 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s ease;
+}
+.util .btn:hover {
+  background: #4978bc;
+  color: #fff;
+  border-color: #4978bc;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 16px;
+  line-height: 1;
+  vertical-align: middle;
+}
+/* ===== D-day Badge (상단 고정) ===== */
+.badge{
+  position:absolute; right:80px; top:150%; transform:translateY(-50%);
+  width:142px; height:142px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color:#fff; text-align:center; gap:6px;
+  background: conic-gradient(from 210deg at 70% 30%, #9557ff, #ff7aa0 40%, #ff9a66 70%, #ff7aa0 90%, #9557ff);
+  box-shadow:0 16px 42px rgba(232,92,117,.35), 0 6px 18px rgba(0,0,0,.12);
+  z-index:10; padding:16px 10px; isolation:isolate;
+}
+.badge .num{font-weight:900;font-size:28px;letter-spacing:.2px;filter:drop-shadow(0 1px 0 rgba(0,0,0,.1))}
+.badge .sub{font-size:12px;opacity:.92}
+.badge::after{content:""; position:absolute; inset:6px; border-radius:50%;
+  background:radial-gradient(120% 120% at 70% 25%, rgba(255,255,255,.35), rgba(255,255,255,.05) 60%, rgba(255,255,255,0) 70%); z-index:-1;
+}
+.badge::before{content:""; position:absolute; top:10px; left:16px; width:64px; height:22px; border-radius:999px;
+  background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0)); filter:blur(1px); opacity:.7;
+}
+.badge .bell-wrap{
+  position:absolute; right:-6px; top:-6px; width:64px; height:64px; border-radius:50%;
+  background:radial-gradient(90% 90% at 50% 20%, #ffd9a6, #ff9a66 70%);
+  box-shadow:0 10px 24px rgba(255,154,102,.35);
+  display:flex; align-items:center; justify-content:center;
+}
+.badge .bell-wrap svg{width:34px;height:34px;fill:#7a2d00;transform-origin:12px 6px;animation:ring 2.2s ease-in-out infinite}
+@keyframes ring{0%,50%,100%{transform:rotate(0)}10%,30%{transform:rotate(-16deg)}20%,40%{transform:rotate(16deg)}}
+@media (max-width:992px){ .badge{display:none} }
+
+/* =========================================
+   GNB
+   ========================================= */
+:root{
+  --gnb-bg:#122f58;
+  --gnb-active:#e85c75;
+  --gnb-border:#122f58;
+  --gnb-link:#ffffff;
+}
+.header-bottom{position:relative;z-index:9}
+.main-navigation{position:relative;background:var(--gnb-bg);border-bottom:1px solid var(--gnb-border);z-index:2}
+.main-navigation .container{position:relative}
+.main-nav>ul{display:flex;justify-content:space-between}
+.main-nav>ul>li{flex:1;text-align:center;transition:background-color .2s}
+.main-nav>ul>li>a{display:block;font-size:20px;font-weight:700;padding:20px 0;color:var(--gnb-link);transition:color .2s, font-size .15s}
+.main-nav>ul>li:hover,.main-nav>ul>li.is-active{background:var(--gnb-active)}
+.main-nav>ul>li:hover>a,.main-nav>ul>li.is-active>a{color:#fff;font-size:21px}
+
+/* ===== 2뎁스 ===== */
+.dropdown-bg{
+  position:absolute;top:100%;left:0;width:100%;background:#fff;height:0;visibility:hidden;opacity:0;
+  box-shadow:0 14px 26px rgba(0,0,0,.16);transition:height .28s ease, opacity .2s ease, visibility .2s ease;z-index:1;
+}
+.dropdown-content{
+  position:absolute;top:100%;left:0;width:100%;padding:20px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .2s ease, visibility .2s ease;z-index:3;background:#fff;
+}
+.dropdown-content .container{display:flex;justify-content:space-between;text-align:center}
+.dropdown-content .container>ul{flex:1;text-align:center;padding:0 10px;border-left:1px solid #e8eef7}
+.dropdown-content .container>ul:first-child{border-left:none}
+.dropdown-content ul li a{display:block;padding:8px 0;font-size:16px;color:#2d3a52;position:relative;transition:color .15s ease, transform .15s ease}
+.dropdown-content ul li a::after{content:"";position:absolute;left:50%;bottom:-3px;height:2px;width:0;background:currentColor;transform:translateX(-50%);transition:width .18s ease}
+.dropdown-content ul li a:hover{color:#0d4aa6;transform:translateY(-1px)}
+.dropdown-content ul li a:hover::after{width:56%}
+.header-bottom.dropdown-open .dropdown-bg{height:320px;visibility:visible;opacity:1}
+.header-bottom.dropdown-open .dropdown-content{opacity:1;visibility:visible;pointer-events:auto}
+
+/* hamburger (mobile) */
+.hamburger-menu{display:none}
+.hamburger-menu .bar{display:block;width:25px;height:3px;margin:5px auto;background:#fff;transition:all .3s}
+@media (max-width:992px){
+  .hamburger-menu{display:block;cursor:pointer;background:none;border:none;padding:10px;position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:1001}
+  .main-nav{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--gnb-bg);z-index:1000;border-bottom:1px solid var(--gnb-border)}
+  .main-nav.active{display:block}
+  .main-nav>ul{flex-direction:column;width:100%;padding:10px 0}
+  .main-nav>ul>li{text-align:center;border-bottom:1px solid rgba(255,255,255,.12)}
+  .main-nav>ul>li>a{display:block;padding:15px;color:#fff}
+  .dropdown-bg,.dropdown-content{display:none !important}
+}
+
+/* ---------- Main 래퍼 ---------- */
+main.container{position:relative;padding:0 0 20px}
+
+/* 회색 배경 100vw */
+.pre-notice{position:relative;z-index:0;margin-bottom:40px;padding-bottom:40px;}
+.pre-notice::before{
+  content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw); right:calc(50% - 50vw);
+  background-color:#f5f7fb;background-image:url('pt.png');background-repeat:no-repeat;background-position:center bottom;background-size:100vw auto;z-index:-1;
+}
+
+/* Notice부터 흰색 전환 */
+.section.notice-section{position:relative;background:#fff;z-index:1}
+.section.notice-section::before{
+  content:"";position:absolute;top:-40px;left:calc(50% - 50vw); right:calc(50% - 50vw);
+  height:40px;background:linear-gradient(to bottom, rgba(245,247,251,1), rgba(255,255,255,0));z-index:-1;
+}
+
+/* ---------- HERO & Cards ---------- */
+.hero-row{padding:18px 0 0}
+.hero-grid{
+  display:grid;grid-template-columns:600px 1fr;gap:30px;align-items:start;
+  max-width:1400px;margin:0 auto;padding:0 20px;
+}
+.hero-left{width:600px;height:710px;background:#f5f7fb url('hero_visual.jpg') center/cover no-repeat;border-radius:16px;overflow:hidden;position:relative}
+.dots{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:10px}
+.dot{width:12px;height:12px;border-radius:50%;border:1px solid #c5ccda;background:#fff}
+.dot.active{background:#9aa9c6}
+
+.hero-right{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
+
+/* 공통 카드 스타일 */
+.card6 {
+  position: relative;
+  background: #fff;
+  border: 3px solid transparent;
+  border-radius: 0 18px 0 18px; /* 대각선 두 꼭지 0 */
+  min-height: 194px;
+
+  /* ⬇ 아이콘과 텍스트 간격을 gap으로, 가운데 정렬 */
+  padding: 16px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-align: center;
+  font-weight: 700;
+  box-shadow: none !important;
+  transition: all 0.35s ease;
+  color: #24324a;
+  overflow: hidden;
+}
+
+/* 팔레트 (4978bc~00a9c7 범위 내 블루그린 톤) */
+.card6:nth-child(1) { --c:#4978bc; }
+.card6:nth-child(2) { --c:#3e8fcb; }
+.card6:nth-child(3) { --c:#2ca3c4; }
+.card6:nth-child(4) { --c:#00a9c7; }
+.card6:nth-child(5) { --c:#3fb0de; }
+.card6:nth-child(6) { --c:#5b93c9; }
+
+.card6 { border-color: var(--c); }
+
+/* ✅ 아이콘: 원본 크기 사용 (사이즈 지정 없음) */
+.card6 img{
+  display:block;
+  margin:0 auto;   /* 중앙 정렬 */
+  height:auto;
+  /* width/height 지정하지 않음: 원본 그대로 */
+}
+
+/* 텍스트 */
+.card6 span{
+  margin:0;                 /* 기존 60px 제거 */
+  display:block;
+  font-size:20px;
+  font-family:'Roboto',sans-serif;
+  color:#24324a;
+  position:relative;
+  z-index:1;
+  transition:color .3s ease;
+}
+
+/* hover 시 해당 컬러로 채움 + 글자 흰색 */
+.card6:hover{
+  background:var(--c);
+  border-color:var(--c);
+  color:#fff;
+  transform:translateY(-4px);
+}
+.card6:hover span{ color:#fff; }
+
+/* ---------- 일정 (2×2) + 파도 채움 ---------- */
+.deadline-row{margin-top:10px;grid-column:1 / -1}
+.deadline-card{
+  background:#fff;border:1px solid #dfe6f3;border-radius:14px;overflow:hidden;
+  max-width:920px;margin:0 auto;
+}
+.deadline-list{
+  display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);
+  border-radius:14px;overflow:hidden;
+}
+.dl-item{
+  --c:#4978bc;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-right:1px dashed #e5ecf7;border-bottom:1px dashed #e5ecf7;
+  min-height:140px;text-align:center;
+  transition:color .3s ease;
+}
+.dl-item:nth-child(2n){border-right:none;}
+.dl-item:nth-last-child(-n+2){border-bottom:none;}
+.dl-item:nth-child(1){--c:#4978bc}
+.dl-item:nth-child(2){--c:#d88f03}
+.dl-item:nth-child(3){--c:#9d4ec6}
+.dl-item:nth-child(4){--c:#e95e75}
+.dl-item *{position:relative;z-index:2}
+.dl-item::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top, var(--c) 0%, color-mix(in srgb, var(--c) 70%, white 30%) 100%);
+  transform:translateY(100%);transition:transform 1.2s cubic-bezier(.25,.75,.25,1);z-index:0;
+}
+.dl-item::after{
+  content:"";position:absolute;left:0;right:0;bottom:-50px;height:120px;background:var(--c);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120'><path d='M0,60 C30,20 60,20 90,60 C120,100 150,100 180,60 C210,20 240,20 270,60 C285,80 300,80 300,120 V120 H0 Z' fill=\"%23000\"/></svg>") repeat-x;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120'><path d='M0,60 C30,20 60,20 90,60 C120,100 150,100 180,60 C210,20 240,20 270,60 C285,80 300,80 300,120 V120 H0 Z' fill=\"%23000\"/></svg>") repeat-x;
+  -webkit-mask-size:300px 120px;mask-size:300px 120px;
+  background-position:0 0;transform:translateY(130%);opacity:0;
+  transition:transform 1.4s cubic-bezier(.25,.75,.25,1),opacity .4s ease;z-index:1;
+}
+.dl-item:hover::before{transform:translateY(0);}
+.dl-item:hover::after{transform:translateY(0);opacity:1;animation:waveFlow 3.8s linear infinite;}
+@keyframes waveFlow{
+  0%{background-position-x:0;transform:translateY(0)}
+  25%{background-position-x:-75px;transform:translateY(3px)}
+  50%{background-position-x:-150px;transform:translateY(0)}
+  75%{background-position-x:-225px;transform:translateY(-3px)}
+  100%{background-position-x:-300px;transform:translateY(0)}
+}
+.dl-item:hover h3,.dl-item:hover p,.dl-item:hover .pill{color:#fff!important}
+.dl-item h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.dl-item p{font-size:24px;font-weight:800}
+.dl-item:nth-child(1) p{color:#4978bc}
+.dl-item:nth-child(2) p{color:#d88f03}
+.dl-item:nth-child(3) p{color:#9d4ec6}
+.dl-item:nth-child(4) p{color:#e95e75}
+.pill{
+  margin-top:8px;display:inline-block;padding:6px 14px;border-radius:20px;
+  font-size:14px;font-weight:800;color:#fff;border:1px solid transparent
+}
+.dl-item:nth-child(1) .pill{background:#4978bc}
+.dl-item:nth-child(2) .pill{background:#d88f03}
+.dl-item:nth-child(3) .pill{background:#9d4ec6}
+.dl-item:nth-child(4) .pill{background:#e95e75}
+.pill.end{background:#444!important}
+.dl-item:hover .pill{background:rgba(255,255,255,.22)!important;border-color:rgba(255,255,255,.55)}
+
+/* ---------- Section Titles ---------- */
+.section{padding:30px 0}
+.section-title{display:block;text-align:center;font-size:36px;font-weight:900;margin:6px auto 18px;border-bottom:none}
+.section-title--sponsor{text-align:left;font-size:22px;margin:0 0 14px 0}
+
+/* ---------- Slider 공통 ---------- */
+.slider-wrap{position:relative;max-width:100%}
+.slider-container{overflow:hidden}
+.slider-track{display:flex;will-change:transform;transition:transform .5s ease}
+.slide-item{padding:0 18px;overflow:visible}
+.sec-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;border-radius:50%;
+  background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:.15s
+}
+.sec-arrow svg{width:20px;height:20px;fill:#364152;transition:fill .15s ease}
+.sec-arrow.prev{left:6px}
+.sec-arrow.next{right:6px}
+.sec-arrow:hover{transform:translateY(-50%) scale(1.06);box-shadow:0 8px 18px rgba(0,0,0,.22);background:#0f1f3d}
+.sec-arrow:hover svg{fill:#fff}
+@media (max-width:900px){.sec-arrow{display:none}}
+
+/* ---------- Notice 카드 ---------- */
+.notice-card{position:relative;isolation:isolate;border-radius:16px;padding:26px;background:#fff;border:1px solid #e3e8f1;transition:.2s;min-width:280px;overflow:visible}
+.notice-card::before{content:"";position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,#4978bc,#e85c75);opacity:0;transition:opacity .2s;z-index:-1}
+.notice-card:hover::before{opacity:1}
+.notice-card:hover{box-shadow:0 18px 34px rgba(0,0,0,.16);transform:translateY(-4px)}
+.notice-head{text-align:center;font-weight:800;font-size:20px;padding:14px 16px;border-radius:12px;color:#183256;background:#f1f6ff;margin-bottom:16px;transition:.2s}
+.notice-thumb{height:168px;margin:12px 0 16px;border-radius:12px;overflow:hidden;background:#fff}
+.notice-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.notice-body{padding:0}
+.notice-body li{display:flex;justify-content:space-between;gap:12px;padding:8px 2px;font-size:17px;border:none}
+.notice-body li:not(:first-child){display:none}
+.notice-body li span{color:#222;transition:color .2s}
+.notice-date{display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-top:8px;color:#607089;font-size:12px;transition:color .2s}
+.notice-date svg{width:16px;height:16px;fill:#607089;transition:fill .2s}
+.notice-card:hover .notice-head{color:#fff;background:transparent;border-color:rgba(255,255,255,.35)}
+.notice-card:hover .notice-body li span{color:#fff}
+.notice-card:hover .notice-date{color:#fff}
+.notice-card:hover .notice-date svg{fill:#fff}
+
+/* ---------- Speakers 섹션 배경(100%) ---------- */
+.speakers-section{position:relative;z-index:0}
+.speakers-section::before{
+  content:"";position:absolute;inset:0;left:calc(50% - 50vw);right:calc(50% - 50vw); height:335px;
+  background:#fff6f7;z-index:-1;
+}
+.speaker-card{position:relative; text-align:center;padding:18px;background:#fff;border-radius:16px;transition:.2s;min-width:210px}
+.speaker-card:hover{background:#f9e5e9;border:3px solid transparent; margin-top:10PX;
+  background:linear-gradient(#e9edf5,#e9edf5) padding-box,linear-gradient(135deg,#4978bc,#e85c75) border-box;transform:translateY(-3px); }
+.avatar{
+  width:120px;height:120px;border-radius:50%;margin:0 auto 10px;background:#e9edf5;color:#9aa9c6;
+  display:flex;align-items:center;justify-content:center;font-size:54px;position:relative;
+}
+.speaker .name{font-weight:800}
+.speaker .role{font-size:13px;color:#7e8796}
+
+/* ---------- Sponsored by ---------- */
+
+.sponsor-wrap{position:relative}
+.section-title--sponsor{text-align:left;font-size:14px;margin:20px 0 14px 0}
+.sponsor-row{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:6px}
+.sponsor-btn{background:#fff;border:1px solid #d7dde7;border-radius:3px;padding:12px;text-align:center;font-weight:600}
+.sponsor-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:default}
+.sponsor-arrow svg{width:22px;height:22px;fill:#444}
+.sponsor-arrow.prev{left:6px}
+.sponsor-arrow.next{right:6px}
+.section.sponsor-section{padding-bottom:10px}
+
+        /* --- 푸터 --- */
+        footer{background:#252d3a;color:#fff;padding:40px 0;font-size:14px}
+        .footer-content{display:flex;justify-content:space-between;gap:40px}
+        .footer-info p{margin-bottom:10px}
+        .footer-contact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .contact-box{background:#354153;padding:14px 12px; text-align:center}
+        .copyright{margin-top:30px;padding-top:20px;border-top:1px solid #354153;text-align:center}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){ .hero-right{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:900px){
+  .sponsor-row{grid-template-columns:repeat(3,1fr)}
+  .mail-grid{grid-template-columns:1fr 1fr}
+  .deadline-list{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .hero-right{grid-template-columns:1fr 1fr}
+  .deadline-list{grid-template-columns:1fr}
+  .dl-item{border-right:none}
+  .deadline-list .dl-item:nth-child(n+2){border-top:1px dashed #e5ecf7}
+}
+@media (max-width:600px){ .hero-right{grid-template-columns:1fr} }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+  <!-- Header Top -->
+  <div class="top-bar">
+    <div class="container">
+      <a class="logo" href="#"><img src="header_logo.png" alt="APKASS 2026 Korea & ICKAS 2026"></a>
+<div class="util">
+  <a class="btn" href="#">
+    <span class="material-symbols-outlined">admin_panel_settings</span> ADMIN
+  </a>
+  <a class="btn" href="#">
+    <span class="material-symbols-outlined">home</span> HOME
+  </a>
+  <a class="btn" href="#">
+    <span class="material-symbols-outlined">person_add</span> SIGN UP
+  </a>
+  <a class="btn" href="#">
+    <span class="material-symbols-outlined">login</span> LOGIN
+  </a>
+</div>
+
+      <!-- D-day Badge -->
+      <div class="badge" aria-live="polite">
+        <div class="bell-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 22a2.5 2.5 0 0 0 2.45-2H9.55A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 1 0-14 0v5l-2 2v1h18v-1l-2-2Z"/></svg>
+        </div>
+        <div class="num" id="floating-dday">D - 100</div>
+        <div class="sub" id="floating-date">Today</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GNB -->
+  <div class="header-bottom">
+    <div class="main-navigation">
+      <div class="container">
+        <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">PROGRAM</a></li>
+            <li><a href="#">Abstract</a></li>
+            <li><a href="#">Registration</a></li>
+            <li><a href="#">Accommodation</a></li>
+            <li><a href="#">Sponsorship</a></li>
+            <li><a href="#">Information</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="dropdown-bg" aria-hidden="true"></div>
+    <div class="dropdown-content" role="menu" aria-label="sub navigation">
+      <div class="container">
+        <ul>
+          <li><a href="#">Welcome Message</a></li>
+          <li><a href="#">Committee</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">News & Notice</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Program at a Glance</a></li>
+          <li><a href="#">Scientific Program</a></li>
+          <li><a href="#">Invited Speakers</a></li>
+          <li><a href="#">Networking Events</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Abstract Submission</a></li>
+          <li><a href="#">Awards</a></li>
+          <li><a href="#">Presentation Guidelines</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Registration Guideline</a></li>
+          <li><a href="#">Online Registration</a></li>
+          <li><a href="#">Visa</a></li>
+        </ul>
+        <ul><li><a href="#">Accommodation</a></li></ul>
+        <ul>
+          <li><a href="#">Sponsorship Opportunities</a></li>
+          <li><a href="#">Our Sponsors</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Venue</a></li>
+          <li><a href="#">Transportation</a></li>
+          <li><a href="#">Tour Information</a></li>
+          <li><a href="#">Useful Information</a></li>
+          <li><a href="#">About Incheon</a></li>
+          <li><a href="#">About Korea</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- 회색 배경이 100%로 깔리는 영역 -->
+    <div class="pre-notice">
+      <section class="hero-row">
+        <div class="hero-grid">
+          <!-- 왼쪽 비주얼 -->
+          <div class="hero-left" aria-label="visual area">
+            <img src="img.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
+            <div class="dots" aria-hidden="true">
+              <span class="dot"></span><span class="dot active"></span><span class="dot"></span>
+            </div>
+          </div>
+
+          <!-- 오른쪽: 카드 6개 + 일정 -->
+          <div class="hero-right">
+            <a class="card6"><img src="ic5.png" alt=""><span>Welcome Message</span></a>
+            <a class="card6"><img src="ic6.png" alt=""><span>Program at a glance</span></a>
+            <a class="card6"><img src="ic7.png" alt=""><span>Scientific Program</span></a>
+            <a class="card6"><img src="ic8.png" alt=""><span>Abstract</span></a>
+            <a class="card6"><img src="ic9.png" alt=""><span>Registration</span></a>
+            <a class="card6"><img src="ic10.png" alt=""><span>Sponsorship</span></a>
+
+            <!-- 일정 -->
+            <section class="deadline-row">
+              <div class="deadline-card">
+                <div class="deadline-list">
+                  <div class="dl-item"><h3>Abstract Submission Opens</h3><p>January 5, 2026</p><span class="pill">D-100</span></div>
+                  <div class="dl-item"><h3>Acceptance Notice</h3><p>April 30, 2026</p><span class="pill">D-100</span></div>
+                  <div class="dl-item"><h3>Abstract Submission Deadline</h3><p>April 10, 2026</p><span class="pill end">END</span></div>
+                  <div class="dl-item"><h3>Registration Opens</h3><p>February 2, 2026</p><span class="pill">D-100</span></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div><!-- /.pre-notice -->
+
+    <!-- Notice & Newsletter -->
+    <section class="section notice-section">
+      <h2 class="section-title">Notice & Newsletter</h2>
+      <div class="slider-wrap">
+        <button class="sec-arrow prev" data-slider="notice-slider" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+
+        <div class="slider-container">
+          <div class="slider-track" id="notice-slider">
+            <div class="slide-item">
+              <article class="notice-card">
+                <div class="notice-head">APKASS 2026 Korea & ICKAS 2026</div>
+                <div class="notice-thumb"><img src="thumb.jpg" alt="thumbnail"></div>
+                <ul class="notice-body"><li><span>Website is Open!</span></li></ul>
+                <div class="notice-date">
+                  <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm14 8H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10z"/></svg>
+                  <span>2025-01-01</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="slide-item">
+              <article class="notice-card">
+                <div class="notice-head">APKASS 2026 Korea & ICKAS 2026</div>
+                <div class="notice-thumb"><img src="thumb.jpg" alt="thumbnail"></div>
+                <ul class="notice-body"><li><span>Abstract submission is now open!</span></li></ul>
+                <div class="notice-date">
+                  <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm14 8H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10z"/></svg>
+                  <span>2025-02-15</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="slide-item">
+              <article class="notice-card">
+                <div class="notice-head">APKASS 2026 Korea & ICKAS 2026</div>
+                <div class="notice-thumb"><img src="thumb.jpg" alt="thumbnail"></div>
+                <ul class="notice-body"><li><span>Online Registration open</span></li></ul>
+                <div class="notice-date">
+                  <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm14 8H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10z"/></svg>
+                  <span>2025-03-01</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="slide-item">
+              <article class="notice-card">
+                <div class="notice-head">APKASS 2026 Korea & ICKAS 2026</div>
+                <div class="notice-thumb"><img src="thumb.jpg" alt="thumbnail"></div>
+                <ul class="notice-body"><li><span>[Dummy] Welcome all participants</span></li></ul>
+                <div class="notice-date">
+                  <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm14 8H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10z"/></svg>
+                  <span>2025-03-22</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <button class="sec-arrow next" data-slider="notice-slider" aria-label="Next">
+          <svg viewBox="0 0 24 24"><path d="m10 6-1.41 1.41L13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Key Speakers (배경 100%) -->
+    <section class="section speakers-section">
+      <h2 class="section-title">Key Speakers</h2>
+      <div class="slider-wrap">
+        <button class="sec-arrow prev" data-slider="speakers-slider" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+
+        <div class="slider-container">
+          <div class="slider-track" id="speakers-slider">
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+            <div class="slide-item"><div class="speaker-card speaker"><div class="avatar">👤</div><div class="name">TBD</div><div class="role">TBD</div></div></div>
+          </div>
+        </div>
+
+        <button class="sec-arrow next" data-slider="speakers-slider" aria-label="Next">
+          <svg viewBox="0 0 24 24"><path d="m10 6-1.41 1.41L13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Sponsored by -->
+    <section class="section sponsor-section">
+      <h2 class="section-title section-title--sponsor">SPONSORED BY</h2>
+      <div class="sponsor-wrap">
+        <button class="sponsor-arrow prev" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+
+        <div class="sponsor-row">
+          <a class="sponsor-btn">Sponsor</a><a class="sponsor-btn">Sponsor</a><a class="sponsor-btn">Sponsor</a>
+          <a class="sponsor-btn">Sponsor</a><a class="sponsor-btn">Sponsor</a><a class="sponsor-btn">Sponsor</a>
+          <a class="sponsor-btn">Sponsor</a>
+        </div>
+
+        <button class="sponsor-arrow next" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m10 6-1.41 1.41L13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>APKASS 2026 Korea & ICKAS 2026 Secretariat</h3>
+                    <p>Convenein International Convention Services, inc.</p>
+                    <p>Tel: +82-2-6278-8590</p>
+                    <p>Operating Hours: 10:00 - 18:00 (KST)</p>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-box">Abstract: sci@apkass2026korea.org</div>
+                    <div class="contact-box">Registration: reg@apkass2026korea.org</div>
+                    <div class="contact-box">Program & Speakers: sci@apkass2026korea.org</div>
+                    <div class="contact-box">General Inquiries: apkass@apkass2026korea.org</div>
+                </div>
+            </div>
+            <div class="copyright">Copyright 2025 © APKASS 2026 Korea & ICKAS 2026 Secretariat, Convenein. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+  <script>
+    // Hamburger (mobile)
+    const hamburgerBtn=document.getElementById('hamburger-btn');
+    const mainNav=document.getElementById('main-nav');
+    hamburgerBtn?.addEventListener('click',()=> mainNav.classList.toggle('active'));
+
+    // GNB active carryover
+    const headerBottom=document.querySelector('.header-bottom');
+    const topLis=[...document.querySelectorAll('.main-nav>ul>li')];
+    function openDropdown(){ headerBottom.classList.add('dropdown-open'); }
+    function closeDropdown(){ headerBottom.classList.remove('dropdown-open'); topLis.forEach(li=>li.classList.remove('is-active')); }
+    function setDesktopHandlers(){
+      if (window.innerWidth>992){
+        topLis.forEach(li=>{
+          li.addEventListener('mouseenter', ()=>{
+            topLis.forEach(x=>x.classList.remove('is-active'));
+            li.classList.add('is-active'); openDropdown();
+          });
+        });
+        headerBottom.addEventListener('mouseleave', closeDropdown);
+      }else{
+        headerBottom.removeEventListener('mouseleave', closeDropdown);
+        topLis.forEach(li=>li.classList.remove('is-active')); closeDropdown();
+      }
+    }
+    setDesktopHandlers(); window.addEventListener('resize', setDesktopHandlers);
+
+    // D-day 값 표시
+    function setFloatingBadge(targetDateStr='2026-09-20'){
+      const dEl=document.getElementById('floating-dday');
+      const sub=document.getElementById('floating-date');
+      const today=new Date(); const target=new Date(targetDateStr);
+      today.setHours(0,0,0,0); target.setHours(0,0,0,0);
+      const days=Math.ceil((target - today)/(1000*60*60*24));
+      dEl.textContent = days>0?`D - ${days}`:(days===0?'D-Day':'Ended');
+      sub.textContent = `Today ${today.toISOString().slice(0,10)}`;
+    }
+    setFloatingBadge();
+
+    /* ==========================
+       Simple Infinite Slider
+       ========================== */
+    const sliders = {};
+    function getPerView(id){
+      const w = window.innerWidth;
+      if(id==='speakers-slider'){
+        if(w>1200) return 5; if(w>992) return 4; if(w>768) return 3; return 2;
+      }else{
+        if(w>1200) return 4; if(w>992) return 3; if(w>768) return 2; return 1;
+      }
+    }
+    function setupSlider(id){
+      const track = document.getElementById(id); if(!track) return;
+      track.style.transition='none'; track.style.transform='translateX(0)';
+      if(!track.dataset.cloned){
+        const frag=document.createDocumentFragment();
+        [...track.children].forEach(ch=>frag.appendChild(ch.cloneNode(true)));
+        track.appendChild(frag); track.dataset.cloned='1';
+      }
+      const perView=getPerView(id);
+      const items=track.querySelectorAll('.slide-item');
+      items.forEach(it=>it.style.flex=`0 0 calc(100% / ${perView})`);
+      sliders[id]={track,idx:0,total:items.length/2,perView,moving:false};
+      requestAnimationFrame(()=>{track.style.transition='transform .5s ease';});
+    }
+    function moveSlider(id,dir){
+      const s=sliders[id]; if(!s||s.moving) return;
+      s.moving=true; s.idx+=dir;
+      s.track.style.transition='transform .5s ease';
+      s.track.style.transform=`translateX(${-s.idx*(100/s.perView)}%)`;
+      setTimeout(()=>{
+        if(s.idx>=s.total){s.track.style.transition='none';s.idx=0;s.track.style.transform='translateX(0%)';setTimeout(()=>{s.track.style.transition='transform .5s ease';},20);}
+        else if(s.idx<0){s.track.style.transition='none';s.idx=s.total-1;s.track.style.transform=`translateX(${-s.idx*(100/s.perView)}%)`;setTimeout(()=>{s.track.style.transition='transform .5s ease';},20);}
+        s.moving=false;
+      },520);
+    }
+    function initAll(){ setupSlider('notice-slider'); setupSlider('speakers-slider'); }
+    initAll(); window.addEventListener('resize', initAll);
+    document.querySelectorAll('.sec-arrow.prev').forEach(btn=>btn.addEventListener('click',()=>moveSlider(btn.dataset.slider,-1)));
+    document.querySelectorAll('.sec-arrow.next').forEach(btn=>btn.addEventListener('click',()=>moveSlider(btn.dataset.slider,1)));
+    setInterval(()=>moveSlider('speakers-slider',1),4000);
+  </script>
+</body>
+</html>

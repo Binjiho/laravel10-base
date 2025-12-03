@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="Author" content="APKASS 2026">
+    <meta name="Keywords" content="APKASS 2026">
+    <meta name="description" content="APKASS 2026">
+    <title>APKASS 2026</title>
+    <link rel="icon" href="/assets/image/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/jquery.rwdImageMaps.js"></script>
+    <script src="/assets/js/common.js"></script>
+</head>
+<body>
+    <!-- 
+        main일 때 calss="main"
+        sub일 때 class="sub"
+    -->
+    <div class="wrap sub">
+        <!-- header -->
+        <div id="dim" class="js-dim"></div>
+        <header id="header" class="js-header">
+            <div class="header-wrap inner-layer">
+                
+                <h1 class="header-logo">
+                    <a href="#n">헤더 로고</a>
+                </h1>
+                <div class="util-wrap">
+                    <div class="dday-wrap type-w">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today, YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-open js-btn-menu-open">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="gnb">
+                <div class="m-gnb-header">
+                    <div class="dday-wrap type-m">
+                        <div class="dday-inner">
+                            <img src="/assets/image/common/bell.svg" alt="">
+                            <div class="text-wrap">
+                                <p class="dday">D - 000</p>
+                                <p class="today">Today YYYY-MM-DD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="util-menu">
+                        <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                        <li><a href="#n"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                        <li><a href="#n" class="admin"><img src="/assets/image/common/ic_admin_w.svg" alt="">ADMIN</a></li>
+                    </ul>
+                </div>
+                <div class="gnb-wrap inner-layer">
+                    <ul class="gnb js-gnb">
+                        <li>
+                            <a href="#n">ABOUT</a>
+                            <ul>
+                                <li><a href="#">Welcome Message</a></li>
+                                <li><a href="#">Committee</a></li>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">News & Notice</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">PROGRAM</a>
+                            <ul>
+                                <li><a href="#">Program at a Glance</a></li>
+                                <li><a href="#">Scientific Program</a></li>
+                                <li><a href="#">Invited Speakers</a></li>
+                                <li><a href="#">Networking Events</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ABSTRACT</a>
+                            <ul>
+                                <li><a href="#">Abstract Submission</a></li>
+                                <li><a href="#">Awards</a></li>
+                                <li><a href="#">Presentation Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">REGISTRATION</a>
+                            <ul>
+                                <li><a href="#">Registration Guideline</a></li>
+                                <li><a href="#">Online Registration</a></li>
+                                <li><a href="#">Visa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">ACCOMMODATION</a>
+                            <ul>
+                                <li><a href="#">Accommodation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">SPONSORSHIP</a>
+                            <ul>
+                                <li><a href="#">Sponsorship Opportunities</a></li>
+                                <li><a href="#">Our Sponsors</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">INFORMATION</a>
+                            <ul>
+                                <li><a href="#">Venue</a></li>
+                                <li><a href="#">Transportation</a></li>
+                                <li><a href="#">Tour Information</a></li>
+                                <li><a href="#">Useful Information</a></li>
+                                <li><a href="#">About Incheon</a></li>
+                                <li><a href="#">About Korea</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-menu-close js-btn-menu-close"><span class="hide">메뉴 닫기</span></button>
+            </nav>
+        </header>
+        <!-- //header -->
+
+<section id="container">
+    <article class="sub-visual">
+        <p class="hide">APKASS 2026 Korea & ICKAS 2026 | September 10 (Thu) - 12 (Sat), 2026 | Grnad Hyatt, Incheon, Korea</p>
+    </article>
+    <article class="sub-menu-wrap">
+        <div class="sub-menu inner-layer">
+            <ul class="sub-menu-list js-sub-menu-list">
+                <li class="sub-menu-depth02">
+                    <a href="#n" class="btn-sub-menu js-btn-sub-menu">Mypage Home</a>
+                    <ul>
+                        <li><a href="#n">Venue</a></li>
+                        <li class="on"><a href="#n">Transportation</a></li>
+                        <li><a href="#n">Tour Information</a></li>
+                        <li><a href="#n">Useful Information</a></li>
+                        <li><a href="#n">About Incheon</a></li>
+                        <li><a href="#n">About Korea</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </article>
+    <article class="sub-contents">
+
+        <!-- 25.12.01 page tit 추가 -->
+         <div class="page-tit-wrap">
+            <h3 class="page-tit">Transportation</h3>
+        </div>
+        <!--// 25.12.01 page tit 추가 -->
+
+        <div class="sub-conbox inner-layer">
+
+            <div class="sub-tab-wrap">
+                <ul class="sub-tab-menu">
+                    <li class="on"><a href="transportation.html">From Airport / Station to the Venue</a></li>
+                    <li><a href="transportation_2.html">Transportation Guide</a></li>
+                </ul>
+            </div>
+            
+            <div class="tab-wrap">
+                <div class="sub-tab-wrap">
+                    <ul class="sub-tab-menu type-trans js-tab-menu">
+                        <li class="on"><a href="#n">Incheon International Airport Terminal 1</a></li>
+                        <li><a href="#n">Incheon International Airport Terminal 2</a></li>
+                        <li><a href="#n">Gimpo International Airport</a></li>
+                        <li><a href="#n">Seoul Station</a></li>
+                    </ul>
+                </div>
+
+                <!-- tab menu 1 -->
+                <div class="sub-tab-con js-tab-con" style="display: block;">
+                    <div class="sub-tit-wrap mt-0">
+                        <h4 class="sub-tit">Free Hotel Shuttle Service</h4>
+                        <a href="https://www.hyatt.com/grand-hyatt/en-US/inche-grand-hyatt-incheon/parking-and-transportation" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Free Hotel Shuttle Service</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bust Stop Location </th>
+                                    <th>Fare </th>
+                                    <th>Interval </th>
+                                    <th>Operating Hour </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>3C, Gate 3, 1st Floor, Terminal 1</strong></td>
+                                    <td>Free </td>
+                                    <td>Every 30 minutes </td>
+                                    <td>05:35 - 22:05 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">Free Airport Shuttle Service</h4>
+                        <a href="https://www.airport.kr/ap_en/1518/subview.do" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Free Airport Shuttle Service</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bus NO. </th>
+                                    <th>Bus Stop Location </th>
+                                    <th>Fare </th>
+                                    <th>Trave Time </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2"><strong>AIRPORT03</strong></td>
+                                    <td>
+                                        Terminal 1 East<br>
+                                        (3rd Floor, Gate 3) 
+                                    </td>
+                                    <td rowspan="2">Free </td>
+                                    <td rowspan="2">3 minutes </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Terminal 1 West<br>
+                                        (3rd Floor, Gate 12)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">BUS</h4>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">BUS</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bus NO. </th>
+                                    <th>Bus stop location </th>
+                                    <th>
+                                        Fare<br>
+                                        (as of October 29, 2025) 
+                                    </th>
+                                    <th>Travel Time </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>111</strong></td>
+                                    <td rowspan="2">Gate 13th, 3rd Floor, Terminal 1 </td>
+                                    <td rowspan="2">KRW 1,900 </td>
+                                    <td rowspan="2">7 minutes </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>306</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">TAXI</h4>
+                        <a href="https://kride.kakaomobility.com/?lang=en#kride-qr-code" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">TAXI</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Travel Time </th>
+                                    <th>
+                                        Fare<br> 
+                                        (as of October 29, 2025)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>4 minutes </td>
+                                    <td>KRW 5,300 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //tab menu 1 -->
+
+
+                <!-- tab menu 2 -->
+                <div class="sub-tab-con js-tab-con">
+                    <div class="sub-tit-wrap mt-0">
+                        <h4 class="sub-tit">Free Hotel Shuttle Service</h4>
+                        <a href="https://www.hyatt.com/grand-hyatt/en-US/inche-grand-hyatt-incheon/parking-and-transportation" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Free Hotel Shuttle Service</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bust Stop Location </th>
+                                    <th>Fare </th>
+                                    <th>Interval </th>
+                                    <th>Operating Hour </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gate 4A, 1st Floor, Terminal 2</strong></td>
+                                    <td>Free </td>
+                                    <td>Every 30 minutes </td>
+                                    <td>06:10 - 22:40 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">Free Airport Shuttle Service</h4>
+                        <a href="https://www.airport.kr/ap_en/1518/subview.do" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Free Airport Shuttle Service</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bus NO. </th>
+                                    <th>Bus Stop Location </th>
+                                    <th>Fare </th>
+                                    <th>Trave Time </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>AIRPORT03</strong></td>
+                                    <td>
+                                        Terminal 2 East<br>
+                                        (3rd Floor, Gate 6) 
+                                    </td>
+                                    <td>Free </td>
+                                    <td>14 minutes </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">BUS</h4>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">BUS</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Bus NO. </th>
+                                    <th>Bus stop location </th>
+                                    <th>
+                                        Fare<br>
+                                        (as of October 29, 2025) 
+                                    </th>
+                                    <th>Travel Time </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>303-1</strong></td>
+                                    <td>Gate 8B, 1st Floor, Termianl 2 </td>
+                                    <td>KRW 2,000 </td>
+                                    <td>16 minutes </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>310</strong></td>
+                                    <td>Gate 11, 3rd Floor, Terminal 2 </td>
+                                    <td>KRW 2,000 </td>
+                                    <td>20 minutes </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">TAXI</h4>
+                        <a href="https://kride.kakaomobility.com/?lang=en#kride-qr-code" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">TAXI</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Travel Time </th>
+                                    <th>
+                                        Fare<br>
+                                        (as of October 29, 2025) 
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>11 minutes </td>
+                                    <td>KRW 13,000 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //tab menu 2 -->
+
+
+                <!-- tab menu 3 -->
+                <div class="sub-tab-con js-tab-con">
+                    <div class="sub-tit-wrap mt-0">
+                        <h4 class="sub-tit">Subway (to Incheon International Airport Terminal 1)</h4>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Subway (to Incheon International Airport Terminal 1)</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 35%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Transportation </th>
+                                    <th>Travel Time </th>
+                                    <th>Fare<br> (as of October 29, 2025) </th>
+                                    <th>Route </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="btn btn-small trans-step type1">STEP 1</span><br> 
+                                        <strong>Subway</strong><br> 
+                                        Airport Railroad Express Route(ARER) 
+                                    </td>
+                                    <td rowspan="2">39 minutes </td>
+                                    <td rowspan="2">KRW<br> 4,850 </td>
+                                    <td class="text-left">
+                                        <span class="route-info"><img src="/assets/image/sub/ic_subway_sm.png" alt=""> Subway: Airport Railroad Express Route(ARER)</span>
+                                        <div class="img-wrap">
+                                            <img src="/assets/image/sub/img_trans_route01.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/" class="btn btn-small trans-step type2">STEP 2</a><br> 
+                                        <strong>Incheon International Airport Terminal 1 <br class="m-hide">to the Hotel</strong>
+                                    </td>
+                                    <td class="text-left">
+                                        <span class="route-info"><img src="/assets/image/sub/ic_bus_sm.png" alt=""> Bus</span>
+                                        <div class="img-wrap">
+                                            <img src="/assets/image/sub/img_trans_route02.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">TAXI</h4>
+                        <a href="https://kride.kakaomobility.com/?lang=en#kride-qr-code" target="_blank" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">TAXI</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Travel Time </th>
+                                    <th>Fare<br> (as of October 29, 2025) </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>32 minutes </td>
+                                    <td>KRW 43,000 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //tab menu 3 -->
+
+
+                <!-- tab menu 4 -->
+                <div class="sub-tab-con js-tab-con">
+                    <div class="sub-tit-wrap mt-0">
+                        <h4 class="sub-tit">Subway (to Incheon International Airport Terminal 1)</h4>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">Subway (to Incheon International Airport Terminal 1)</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 35%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Transportation </th>
+                                    <th>Travel Time </th>
+                                    <th>
+                                        Fare<br>
+                                        (as of October 29, 2025)
+                                    </th>
+                                    <th>Route </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="btn btn-small trans-step type1">STEP 2</span><br>
+                                        <strong>Subway</strong><br>
+                                        Airport Railroad Express Route(ARER)
+                                    </td>
+                                    <td rowspan="2">63 minutes </td>
+                                    <td rowspan="2">
+                                        KRW<br>
+                                        4,850
+                                    </td>
+                                    <td class="text-left">
+                                        <span class="route-info"><img src="/assets/image/sub/ic_subway_sm.png" alt=""> Subway: Airport Railroad Express Route(ARER)</span>
+                                        <div class="img-wrap">
+                                            <img src="/assets/image/sub/img_trans_route03.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="btn btn-small trans-step type2">STEP 2</span><br>
+                                        <strong>Incheon International Airport Terminal 1 <br>to the Hotel</strong>
+                                    </td>
+                                    <td class="text-left">
+                                        <span class="route-info"><img src="/assets/image/sub/ic_bus_sm.png" alt=""> Bus</span>
+                                        <div class="img-wrap">
+                                            <img src="/assets/image/sub/img_trans_route02.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sub-tit-wrap">
+                        <h4 class="sub-tit">TAXI</h4>
+                        <a href="#n" class="btn btn-small color-type1 btn-trans-more">more</a>
+                    </div>
+                    <div class="table-wrap scroll-x touch-help">
+                        <table class="cst-table">
+                            <caption class="hide">TAXI</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Travel Time </th>
+                                    <th>
+                                        Fare<br>
+                                        (as of October 29, 2025)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>32 minutes </td>
+                                    <td>KRW 43,000 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //tab menu 4 -->
+            </div>
+            
+            <div class="info-conbox">
+                <p class="tit"><img src="/assets/image/sub/ic_info.png" alt="">Taxi Destination Instructions for Driver</p>
+                <p>If you are taking a taxi from the Airport or Subway Station, please show this message to the taxi driver. The following means “Please take me to GRAND HYATT INCHEON” in Korean.</p>
+                <div class="bg-box type-taxi">
+                    <div class="text-box">
+                        <p class="text">“그랜드 하얏트 인천”으로 가주세요.</p>
+                        <p class="address"><span class="badge">주소</span> <span class="underline">인천 중구 영종해안남로321번길 208</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-box type-kride">
+                <div class="img-wrap">
+                    <img src="/assets/image/sub/img_trans_kride01.png" alt="">
+                    <img src="/assets/image/sub/img_trans_qr_kride.png" alt="">
+                </div>
+                <div class="text-box">
+                    <p class="tit">About K.ride – a helpful app for taxi users</p>
+                    <p>Please note that Uber is still being introduced, so availability is limited, and Grab doesn’t operate in Seoul or any other region of South Korea.</p>
+                    <p>Instead, we recommend using the K.ride application, which is well-suited for international visitors traveling to Seoul and other parts of the country.</p>
+                    <p>K.ride offers multilingual support, including Chinese, English, Japanese, and Korean, and allows payment with internationally issued credit cards. Additionally, many of the drivers are able to communicate in basic English, which can enhance convenience for non-Korean speakers. We encourage you to download the application in advance of your trip to Korea.</p>
+                    <p class="em">Scan the QR code to download k.ride app</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="inner-layer">
+                <div class="footer-wrap">
+                    <p class="title">APKASS 2026 Korea & ICKAS 2026 Secretariat</p>
+                    <p class="des">Convenein International Convention Services, Inc.</p>
+                    <dl>
+                        <dt>Tel:</dt>
+                        <dd><a href="tel:02-6278-8590"> +82-2-6278-8590</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>Email:</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="mailto:sci@apkass2026korea.org">
+                                    <span>Abstract</span>
+                                    <span>sci@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:reg@apkass2026korea.org">
+                                    <span>Registration</span>
+                                    <span>reg@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:sci@apkass2026korea.org">
+                                    <span>Program & Speakers</span>
+                                    <span>sci@apkass2026korea.org</span>
+                                </a></li>
+                                <li><a href="mailto:apkass@apkass2026korea.org">
+                                    <span>General</span>
+                                    <span>apkass@apkass2026korea.org</span>
+                                </a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Operating Hours:</dt>
+                        <dd>10:00 - 18:00 (KST)</dd>
+                    </dl>
+                </div>
+                <div class="host-wrap">
+                    <p>Hosted by</p>
+                    <ul>
+                        <li><a href="/">
+                            <img src="/assets/image/common/f_logo1.png" alt="APKASS">
+                        </a></li>
+                        <li><a href="/">
+                            <img src="/assets/image/common/f_logo2.png" alt="Korean Arthroscopy Society">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">Copyright 2025 © APKASS 2026 Korea & ICKAS 2026 Secretariat, Convenein. All Rights Reserved.</p>
+            <!--
+            <button type="button" class="btn-top js-btn-top">
+                <img src="/assets/image/common/img_top.png" alt="">
+            </button>
+            -->
+        </footer>
+        <!-- //footer -->
+        </div>
+    </body>
+</html>
