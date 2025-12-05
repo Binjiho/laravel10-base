@@ -25,19 +25,21 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
     <article class="sub-contents">
         <div class="sub-conbox inner-layer">
 
+            <div class="page-tit-wrap mt-0">
+                <h3 class="page-tit">News & Notice</h3>
+            </div>
+            
             <!-- s:board -->
             <link href="/assets/css/board_notice.css" rel="stylesheet">
 
             <div id="board" class="board-wrap board-notice-type1">
-
                 <ul class="board-list">
                     <li class="list-head">
-                        <div class="bbs-no bbs-col-xs n-bar">번호</div>
-                        <div class="bbs-tit n-bar">제목</div>
-                        <div class="bbs-file bbs-col-xs">파일</div>
-                        <div class="bbs-cate bbs-col-s n-bar">조회수</div>
-                        <div class="bbs-name bbs-col-xl">작성자</div>
-                        <div class="bbs-date bbs-col-m">작성일</div>
+                        <div class="bbs-no bbs-col-xs n-bar">No</div>
+                        <div class="bbs-tit n-bar">Title</div>
+                        <div class="bbs-file bbs-col-xs">File</div>
+                        <div class="bbs-date bbs-col-m">Date</div>
+                        <div class="bbs-cate bbs-col-xs n-bar">Hit</div>
                         <div class="bbs-show bbs-col-s">공개여부</div>
                         <div class="bbs-admin bbs-col-s">관리</div>
                     </li>
@@ -51,9 +53,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                             <a href="./view.html" class="ellipsis">공지사항 입니다. 공지사항 입니다.</a> <span class="ic-new">N</span>
                         </div>
                         <div class="bbs-file bbs-col-xs"><img src="/assets/image/board/notice/ic_attach_file.png" alt=""></div>
-                        <div class="bbs-hit bbs-col-s n-bar">1</div>
-                        <div class="bbs-name bbs-col-xl">APKASS 2026 Korea & ICKAS 2026</div>
                         <div class="bbs-name bbs-col-m">YYYY-MM-DD</div>  
+                        <div class="bbs-hit bbs-col-xs n-bar">1</div>
                         <div class="bbs-show bbs-col-s">
                             <select name="" id="" class="form-item">
                                 <option value="">공개</option>
@@ -77,9 +78,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                             <a href="./view.html" class="ellipsis">공지사항 입니다. 공지사항 입니다.</a> <span class="ic-new">N</span>
                         </div>
                         <div class="bbs-file bbs-col-xs"><img src="/assets/image/board/notice/ic_attach_file.png" alt=""></div>
-                        <div class="bbs-hit bbs-col-s n-bar">1</div>
-                        <div class="bbs-name bbs-col-xl">APKASS 2026 Korea & ICKAS 2026</div>
-                        <div class="bbs-name bbs-col-m">YYYY-MM-DD</div>
+                        <div class="bbs-name bbs-col-m">YYYY-MM-DD</div>  
+                        <div class="bbs-hit bbs-col-xs n-bar">1</div>
                         <div class="bbs-show bbs-col-s">
                             <select name="" id="" class="form-item">
                                 <option value="">공개</option>
@@ -102,9 +102,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                             <a href="./view.html" class="ellipsis">새글입니다. 새글입니다. 새글입니다.</a>  <span class="ic-new">N</span>
                         </div>
                         <div class="bbs-file bbs-col-xs"><img src="/assets/image/board/notice/ic_attach_file.png" alt=""></div>
-                        <div class="bbs-hit bbs-col-s n-bar">1</div>
-                        <div class="bbs-name bbs-col-xl">APKASS 2026 Korea & ICKAS 2026</div>
                         <div class="bbs-name bbs-col-m">YYYY-MM-DD</div>  
+                        <div class="bbs-hit bbs-col-xs n-bar">1</div>
                         <div class="bbs-show bbs-col-s">
                             <select name="" id="" class="form-item">
                                 <option value="">공개</option>
@@ -140,6 +139,23 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                         <li class="next"><a href="#n"><span class="hide">다음</span></a></li>
                         <li class="last"><a href="#n"><span class="hide">마지막</span></a></li>
                     </ul>
+                </div>
+
+                <div class="sch-wrap type1">
+                    <form action="" method="">
+                        <feildset>
+                            <legend class="hide">검색</legend>
+                            <div class="form-group">
+                                <select name="" id="" class="form-item sch-cate">
+                                    <option value="">ALL </option>
+                                    <option value="">Subject </option>
+                                    <option value="">Content</option>
+                                </select>
+                                <input type="text" name="" id="" class="form-item sch-key" placeholder="">
+                                <button type="submit" class="btn btn-sch">SEARCH</button>
+                            </div>
+                        </feildset>
+                    </form>
                 </div>
             </div>        
             <!-- //e:board -->

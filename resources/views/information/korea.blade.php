@@ -23,7 +23,7 @@
                         tradition, the country has a lot to offer to travelers.
                     </p>
                     <p>
-                        The Korean peninsula, roughly 1,030 km long and 175 km at its narrowest point, has a total land area of 100,033 km2. Korea is Located at the center of Northeast 
+                        The Korean Peninsula, roughly 1,030 km long and 175 km at its narrowest point, has a total land area of 100,033 km<sup>2</sup>. Korea is Located at the center of Northeast 
                         Asia, the Korean Peninsula neighbors China, Russia, and Japan.
                     </p>
                     <div class="btn-wrap">
@@ -41,7 +41,7 @@
                         <img src="/assets/image/sub/img_korea1.jpg" alt="Busan">
                         <div class="text-overlay">
                             <p>Busan</p>
-                            <span>2nd largest city and number one trading hub in Korea</span>
+                            <span>2<sup>nd</sup> largest city and number one trading hub in Korea</span>
                         </div>
                     </a>
                 </li>

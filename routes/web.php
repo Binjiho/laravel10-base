@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Route;
 
 // main
 Route::controller(\App\Http\Controllers\Main\MainController::class)->group(function () {
-    Route::get('/', 'intro')->name('intro');
+    Route::get('/', 'main')->name('index');
+    Route::get('intro', 'intro')->name('intro');
     Route::get('main', 'main')->name('main');
     Route::post('data', 'data')->name('main.data');
 });
 
 //about M1
-Route::controller(\App\Http\Controllers\About\AboutController::class)->group(function () {
+Route::controller(\App\Http\Controllers\About\AboutController::class)->prefix('about')->group(function () {
     Route::get('welcome', 'welcome')->name('about.welcome');
     Route::get('committee', 'committee')->name('about.committee');
     Route::get('overview', 'overview')->name('about.overview');
@@ -24,20 +25,42 @@ Route::controller(\App\Http\Controllers\About\AboutController::class)->group(fun
     Route::get('news', 'news')->name('about.news');
 });
 
+//Program M2
+Route::controller(\App\Http\Controllers\Program\ProgramController::class)->prefix('program')->group(function () {
+    Route::get('glance', 'glance')->name('program.glance');
+    Route::get('scientific', 'scientific')->name('program.scientific');
+    Route::get('speaker', 'speaker')->name('program.speaker');
+    Route::get('event', 'event')->name('program.event');
+});
+
+//Abstract M3
+Route::controller(\App\Http\Controllers\Abstracts\AbstractsController::class)->prefix('abstract')->group(function () {
+    Route::get('submission', 'submission')->name('abstract.submission');
+    Route::get('awards', 'awards')->name('abstract.awards');
+    Route::get('guideline', 'guideline')->name('abstract.guideline');
+});
+
+//Registration M4
+Route::controller(\App\Http\Controllers\Registration\RegistrationController::class)->prefix('registration')->group(function () {
+    Route::get('guideline', 'guideline')->name('registration.guideline');
+    Route::get('online', 'online')->name('registration.online');
+    Route::get('visa', 'visa')->name('registration.visa');
+});
+
 //accommodation M5
-Route::controller(\App\Http\Controllers\Accommodation\AccommodationController::class)->group(function () {
+Route::controller(\App\Http\Controllers\Accommodation\AccommodationController::class)->prefix('accomodation')->group(function () {
     Route::get('acc', 'acc')->name('accom.acc');
 });
 
 //sponsorship M6
-Route::controller(\App\Http\Controllers\Sponsor\SponsorController::class)->group(function () {
+Route::controller(\App\Http\Controllers\Sponsorship\SponsorshipController::class)->prefix('sponsorship')->group(function () {
     Route::get('opp', 'opp')->name('sponsor.opp');
     Route::get('our', 'our')->name('sponsor.our');
 });
 
 
 //information M7
-Route::controller(\App\Http\Controllers\Information\InformationController::class)->group(function () {
+Route::controller(\App\Http\Controllers\Information\InformationController::class)->prefix('info')->group(function () {
     Route::get('venue', 'venue')->name('info.venue');
     Route::get('transportation', 'transportation')->name('info.transportation');
     Route::get('tour', 'tour')->name('info.tour');

@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td style="padding-top: 50px;text-align: center;">
-                        <a href="{{ env("APP_URL") }}/main" target="_blank"><img src="{{ env("APP_URL") }}/assets/image/mail/btn_mail_home.png" alt="홈페이지 바로가기"></a>
+                        <a href="{{ env("APP_URL") }}" target="_blank"><img src="{{ env("APP_URL") }}/assets/image/mail/btn_mail_home.png" alt="홈페이지 바로가기"></a>
                     </td>
                 </tr>
                 </tbody>

@@ -94,7 +94,32 @@
                         </li>
                         <li>
                             <div class="form-tit"><strong class="required">*</strong> Emergency Contact</div>
-                            <div class="form-con">{{ $user->contact_first_name ?? '' }} {{ $user->contact_last_name ?? '' }} {{ $user->contact_relation ?? '' }} {{ $user->contact_email ?? '' }}</div>
+                            <div class="form-con">
+                                <ul class="write-wrap">
+                                    <li>
+                                        <div class="form-tit"><strong class="required">*</strong> Name</div>
+                                        <div class="form-con">
+                                            <div class="form-group n2">
+                                                {{ $user->contact_first_name ?? '' }}
+                                                {{ $user->contact_last_name ?? '' }}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-tit"><strong class="required">*</strong> Relation</div>
+                                        <div class="form-con">
+                                            {{ $user->contact_relation ?? '' }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-tit"><strong class="required">*</strong> Email</div>
+                                        <div class="form-con">
+                                            {{ $user->contact_email ?? '' }}
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
                         </li>
                         <li>
                             <div class="form-tit"><strong class="required">*</strong> Source</div>
@@ -102,7 +127,7 @@
                                 @php
                                     if(!empty($user)){
                                         $selected = explode(',', $user->source);
-                                        $labels = [];
+                                        $labels = array();
                                         foreach ($selected as $code) {
                                             $label = $userConfig['source'][$code] ?? $code;
                                             if ($code === 'Z' && !empty($user->source_etc)) {
@@ -120,8 +145,8 @@
                     <div class="btn-wrap text-center">
                         <a href="{{ env("APP_URL") }}/main" class="btn btn-type1 color-type4 btn-line">HOME</a>
                         <a href="{{ route('mypage') }}" class="btn btn-type1 color-type1">My page</a>
-                        <a href="javascript:;" class="btn btn-type1 color-type5">Go to Abstract Submission</a>
-                        <a href="javascript:;" class="btn btn-type1 color-type2">Go to Online Registration</a>
+                        <!-- <a href="javascript:;" class="btn btn-type1 color-type5">Go to Abstract Submission</a>
+                        <a href="javascript:;" class="btn btn-type1 color-type2">Go to Online Registration</a> -->
                     </div>
 
                 </fieldset>

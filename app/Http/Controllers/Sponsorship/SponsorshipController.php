@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Sponsor;
+namespace App\Http\Controllers\Sponsorship;
 
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class SponsorController extends Controller
+class SponsorshipController extends Controller
 {
     public function __construct()
     {
@@ -18,10 +18,16 @@ class SponsorController extends Controller
 
     public function opp(Request $request)
     {
-        return view('sponsor.opp');
+        view()->share([
+            'sub_key' => 'S1',
+        ]);
+        return view('sponsorship.opp');
     }
     public function our(Request $request)
     {
-        return view('sponsor.our');
+        view()->share([
+            'sub_key' => 'S2',
+        ]);
+        return view('sponsorship.our');
     }
 }

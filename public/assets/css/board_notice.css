@@ -20,6 +20,44 @@
     * Type A
 
 ====================================== */
+
+/* Type A */
+.sch-wrap.type1 .form-group{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.sch-wrap.type1 .form-item{
+    height: 40px;
+    margin: 0 5px;
+    border-color: #dcdcdc;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    letter-spacing: -0.015em;
+}
+.sch-wrap.type1 .sch-cate{
+    width: 110px;
+}
+.sch-wrap.type1 .sch-key{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 5px;
+}
+.sch-wrap.type1 .btn-sch{
+    height: 40px;
+    padding: 0 10px;
+    background-color: #001f34;
+    border-radius: 3px;
+    font-size: 15px;
+    color: #fff;
+}
+.sch-wrap.type1.skin1 .btn-sch{
+    padding-left: 0;
+    width: 40px;
+    margin-left: -10px;
+}
+
+
 #board .btn-type1{
     min-width: 120px;
 }
@@ -714,6 +752,52 @@
 }
 
 @media screen and (max-width: 768px){
+    /* Type A */
+    .sch-wrap.type1 .form-group{
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .sch-wrap.type1  .form-item{
+        display: block;
+        float: left;
+        margin: 0;
+        font-size: 14px;
+        border-radius: 2px;
+    }
+    .sch-wrap.type1 .sch-cate{
+        width: 100%;
+    }
+    .sch-wrap.type1 .sch-key{
+        width: calc(100% - 80px);
+        margin: 0;
+        margin-top: 10px;
+    }
+    .sch-wrap.type1 .btn-sch{
+        width: 80px;
+        margin-top: 10px;
+        padding: 0 18px;
+        background-position: 18px center;
+        background-size: 15px;
+        border-radius: 2px;
+        font-size: 14px;
+        text-align: right;
+    }
+    .sch-wrap.type1.skin1 .btn-sch{
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 0;
+        background-position: center;
+    }
+    .sch-wrap.type1.skin1 .sch-cate{
+        width: 90px;
+    }
+    .sch-wrap.type1.skin1 .sch-key{
+        width: calc((100% - 140px));
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
     /* list */
     .board-notice-type1 .board-list .list-head{
         display: none;

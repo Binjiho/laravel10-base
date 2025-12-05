@@ -20,7 +20,7 @@ class AuthServices extends AppServices
     public function signupAction(Request $request)
     {
         $this->data['captcha'] = (new CommonServices())->captchaMakeService();
-        $this->data['country_list'] = Country::get()->keyBy('sid');
+        $this->data['country_list'] = Country::orderBy('sid')->get()->keyBy('sid');
 //        $this->data['country_list'] = Country::orderBy('sid')->get();
 
         if(!empty($request->sid)){

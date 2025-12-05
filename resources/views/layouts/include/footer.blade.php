@@ -22,7 +22,7 @@
                                 <span>abstract@apkass2026korea.org</span>
                             </a></li>
                         <li><a href="mailto:apkass@apkass2026korea.org">
-                                <span>General</span>
+                                <span>General Inquiries</span>
                                 <span>apkass@apkass2026korea.org</span>
                             </a></li>
                         <li><a href="mailto:sci@apkass2026korea.org">
@@ -41,10 +41,10 @@
         <div class="host-wrap">
             <p>Hosted by</p>
             <ul>
-                <li><a href="/">
+                <li><a href="https://apkass.org/" target="_blank">
                         <img src="/assets/image/common/f_logo1.png" alt="APKASS">
                     </a></li>
-                <li><a href="/">
+                <li><a href="https://korarthro.com/" target="_blank">
                         <img src="/assets/image/common/f_logo2.png" alt="Korean Arthroscopy Society">
                     </a></li>
             </ul>

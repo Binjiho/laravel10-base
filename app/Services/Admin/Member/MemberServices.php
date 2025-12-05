@@ -20,7 +20,7 @@ class MemberServices extends AppServices
 {
     public function listService(Request $request, string $case)
     {
-        $this->data['country_list'] = Country::get()->keyBy('sid');
+        $this->data['country_list'] = Country::orderBy('sid')->get()->keyBy('sid');
 
         $li_page = $request->li_page ?? 20;
 

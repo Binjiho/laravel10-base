@@ -102,8 +102,9 @@ return [
     ],
 
     'search' => [ // 검색 정보
-        'subject/contents' => '제목 + 내용',
-        'writer' => '작성자',
+        'all' => 'ALL',
+        'subject' => 'Subject',
+        'contents' => 'Content',
     ],
 
     'key' => [ // 메뉴 키

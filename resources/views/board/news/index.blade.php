@@ -13,12 +13,11 @@
             <div id="board" class="board-wrap board-notice-type1">
                 <ul class="board-list">
                     <li class="list-head">
-                        <div class="bbs-no bbs-col-xs n-bar">번호</div>
-                        <div class="bbs-tit n-bar">제목</div>
-                        <div class="bbs-file bbs-col-xs">파일</div>
-                        <div class="bbs-cate bbs-col-s n-bar">조회수</div>
-                        <div class="bbs-name bbs-col-xl">작성자</div>
-                        <div class="bbs-date bbs-col-m">작성일</div>
+                        <div class="bbs-no bbs-col-xs n-bar">No</div>
+                        <div class="bbs-tit n-bar">Title</div>
+                        <div class="bbs-file bbs-col-xs">File</div>
+                        <div class="bbs-date bbs-col-m">Date</div>
+                        <div class="bbs-cate bbs-col-s n-bar">Hit</div>
                         @if(isAdmin())
                         <div class="bbs-show bbs-col-s">공개여부</div>
                         <div class="bbs-admin bbs-col-s">관리</div>
@@ -42,9 +41,8 @@
 
                             <div class="bbs-file bbs-col-xs"><img src="/assets/image/board/notice/ic_attach_file.png" alt=""></div>
 
-                            <div class="bbs-hit bbs-col-s n-bar">{{ number_format($row->ref) }}</div>
-                            <div class="bbs-name bbs-col-xl">{{ $row->name ?? '' }}</div>
                             <div class="bbs-name bbs-col-m">{{ $row->created_at->format('Y-m-d') }}</div>
+                            <div class="bbs-hit bbs-col-s n-bar">{{ number_format($row->ref) }}</div>
 
                             @if( isAdmin())
                                     <div class="bbs-show bbs-col-s">
@@ -81,9 +79,8 @@
 
                             <div class="bbs-file bbs-col-xs"><img src="/assets/image/board/notice/ic_attach_file.png" alt=""></div>
 
-                            <div class="bbs-hit bbs-col-s n-bar">{{ number_format($row->ref) }}</div>
-                            <div class="bbs-name bbs-col-xl">{{ $row->name ?? '' }}</div>
                             <div class="bbs-name bbs-col-m">{{ $row->created_at->format('Y-m-d') }}</div>
+                            <div class="bbs-hit bbs-col-s n-bar">{{ number_format($row->ref) }}</div>
 
 
                             @if( isAdmin())
@@ -123,6 +120,23 @@
 
                 <div class="paging-wrap">
                     {{ $list->links('pagination::custom') }}
+                </div>
+
+                <div class="sch-wrap type1">
+                    <form action="{{ route('board', ['code' => $code]) }}" method="get">
+                        <fieldset>
+                            <legend class="hide">검색</legend>
+                            <div class="form-group">
+                                <select name="search" id="search" class="form-item sch-cate">
+                                    @foreach($boardConfig['search'] as $key => $val)
+                                        <option value="{{ $key }}" {{ request()->input('search', '') == $key ? 'selected' : '' }}>{{ $val }}</option>
+                                    @endforeach
+                                </select>
+                                <input type="text" name="keyword" id="keyword" class="form-item sch-key" placeholder="" value="{{ request()->keyword ?? '' }}">
+                                <button type="submit" class="btn btn-sch">SEARCH</button>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <!-- //e:board -->

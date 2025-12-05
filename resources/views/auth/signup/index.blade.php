@@ -17,18 +17,21 @@
                     <div class="con-tit-wrap mt-0">
                         <h4 class="con-tit">Privacy Policy</h4>
                     </div>
-                    <div class="term-wrap scroll-y">
+					<div>
+                        <p>
+                            This privacy policy sets out how APKASS 2026 Korea & ICKAS 2026 uses and protects any information when you use this website.
+                        </p>
+                        <p>
+                            APKASS 2026 Korea & ICKAS 2026 is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which 
+                            you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
+                        </p>
+                        <p>
+                            This website is operated by APKASS 2026 Korea & ICKAS 2026, and this privacy policy applies to this website only.
+                        </p>
+                    </div>
+                    <div class="term-wrap scroll-y mt-10">
                         <div class="term-conbox">
-                            <p>
-                                This privacy policy sets out how APKASS 2026 Korea & ICKAS 2026 uses and protects any information when you use this website.
-                            </p>
-                            <p>
-                                APKASS 2026 Korea & ICKAS 2026 is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which
-                                you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.
-                            </p>
-                            <p>
-                                This website is operated by APKASS 2026 Korea & ICKAS 2026, and this privacy policy applies to this website only.
-                            </p>
+                           
                             <p><strong>Purposes</strong></p>
                             <p>
                                 The APKASS 2026 Korea & ICKAS 2026 website provides essential services for the operation of the scientific meeting, including online abstract submission,

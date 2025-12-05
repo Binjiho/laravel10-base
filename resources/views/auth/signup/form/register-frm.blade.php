@@ -12,7 +12,9 @@
         <li class="kr_li" style="{{ ($user->country ?? '') == '1' ? '' : 'display:none;' }}">
             <div class="form-tit"><strong class="required">*</strong> Nationality</div>
             <div class="form-con">
+                @if( ($user->country ?? '') == '1' )
                 {{ $country_list[$user->nationality]['name'] }}
+                @endif
             </div>
         </li>
     @else
@@ -68,8 +70,8 @@
         <div class="form-tit"><strong class="required">*</strong> Name</div>
         <div class="form-con">
             <div class="form-group n2">
-                <input type="text" name="first_name" id="first_name" value="{{ $user->first_name ?? '' }}" class="form-item" placeholder="First Name" enname>
-                <input type="text" name="last_name" id="last_name" value="{{ $user->last_name ?? '' }}" class="form-item" placeholder="Last Name" enname>
+                <input type="text" name="first_name" id="first_name" value="{{ $user->first_name ?? '' }}" class="form-item" placeholder="First Name" enname upperCase>
+                <input type="text" name="last_name" id="last_name" value="{{ $user->last_name ?? '' }}" class="form-item" placeholder="Last Name" enname upperCase>
             </div>
         </div>
     </li>
@@ -97,7 +99,7 @@
             <div class="form-group-text">
                 <div>
                     <p>+Country Code</p>
-                    <input type="text" name="ccode" id="ccode" value="{{ $user->ccode ?? '' }}" class="form-item" readonly>
+                    <input type="text" name="ccode" id="ccode" value="{{ $user->ccode ?? '' }}" class="form-item" onlyNumber>
                 </div>
                 <span class="text country">-</span>
                 <div>
@@ -184,13 +186,13 @@
     <li>
         <div class="form-tit"><strong class="required">*</strong> Address</div>
         <div class="form-con">
-            <input type="text" name="address" id="address" value="{{ $user->address ?? '' }}" class="form-item">
+            <input type="text" name="address" id="address" value="{{ $user->address ?? '' }}" class="form-item" enname>
         </div>
     </li>
     <li>
         <div class="form-tit"><strong class="required">*</strong> City</div>
         <div class="form-con">
-            <input type="text" name="city" id="city" value="{{ $user->city ?? '' }}" class="form-item">
+            <input type="text" name="city" id="city" value="{{ $user->city ?? '' }}" class="form-item" enname>
         </div>
     </li>
     <li>
@@ -201,8 +203,8 @@
                     <div class="form-tit"><strong class="required">*</strong> Name</div>
                     <div class="form-con">
                         <div class="form-group n2">
-                            <input type="text" name="contact_first_name" id="contact_first_name" value="{{ $user->contact_first_name ?? '' }}" class="form-item" placeholder="First Name">
-                            <input type="text" name="contact_last_name" id="contact_last_name" value="{{ $user->contact_last_name ?? '' }}" class="form-item" placeholder="Last Name">
+                            <input type="text" name="contact_first_name" id="contact_first_name" value="{{ $user->contact_first_name ?? '' }}" class="form-item" placeholder="First Name" enname upperCase>
+                            <input type="text" name="contact_last_name" id="contact_last_name" value="{{ $user->contact_last_name ?? '' }}" class="form-item" placeholder="Last Name" enname upperCase>
                         </div>
                     </div>
                 </li>

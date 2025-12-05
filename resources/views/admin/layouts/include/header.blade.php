@@ -10,7 +10,7 @@
             </p>
 
             <ul class="util-menu">
-                <li><a href="{{ env('APP_URL') }}/main" class="btn btn-util color-type17" target="_blank">Main</a></li>
+                <li><a href="{{ env('APP_URL') }}/" class="btn btn-util color-type17" target="_blank">Main</a></li>
                 <li><a href="javascript:logout();" class="btn btn-util color-type5">Logout</a></li>
                 <li><a href="javascript:changeWide();" class="btn btn-util color-type5">기본화면 전환</a></li>
             </ul>

@@ -27,25 +27,25 @@
                                     <tbody>
                                         
                                         <tr>
-                                            <th>Registration</th>
+                                            <th class="text-left">Registration</th>
                                             <td class="text-left">
                                                 <a href="mailto:reg@apkass2026korea.org" class="link">reg@apkass2026korea.org</a>
                                             </td>
                                         </tr>
 										<tr>
-                                            <th>Abstract</th>
+                                            <th class="text-left">Abstract</th>
                                             <td class="text-left">
                                                 <a href="mailto:abstract@apkass2026korea.org" class="link">abstract@apkass2026korea.org</a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Program &amp; Speakers</th>
+                                            <th class="text-left">Program &amp; Speakers</th>
                                             <td class="text-left">
                                                 <a href="mailto:sci@apkass2026korea.org" class="link">sci@apkass2026korea.org</a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>General Inquiries</th>
+                                            <th class="text-left">General Inquiries</th>
                                             <td class="text-left">
                                                 <a href="mailto:apkass@apkass2026korea.org" class="link">apkass@apkass2026korea.org</a>
                                             </td>

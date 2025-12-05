@@ -123,12 +123,12 @@
             </div>
             <div class="main-video-wrap">
                 <div class="main-video">
-                    <iframe src="https://www.youtube.com/embed/_Rk4P9kmp44?si=8o3VLFXTlqcjJcKZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1143287179?h=2350c541e6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </article>
 
-        <article class="main-contents inner-layer" id="section4">
+        <!-- <article class="main-contents inner-layer" id="section4">
             <div class="main-title-wrap">
                 <h3>Key Speakers</h3>
                 <a -href="/" class="more-view">More View +</a>
@@ -196,9 +196,9 @@
                 </div>
             </div>
         </article>
-    </section>
+    </section> -->
 
-    <section class="sponsor-wrap  inner-layer main-contents">
+    <!-- <section class="sponsor-wrap  inner-layer main-contents">
         <div class="main-title-wrap">
             <h3>SPONSORED BY</h3>
         </div>
@@ -213,7 +213,7 @@
                 <a href="#n" target="_blank"><img src="/assets/image/main/sponsor.png" alt=""></a>
             </div>
         </div>
-    </section>
+    </section> -->
 @endsection
 
 @section('addScript')

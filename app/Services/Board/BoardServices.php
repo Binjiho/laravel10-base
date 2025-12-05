@@ -58,7 +58,7 @@ class BoardServices extends AppServices
 
         if (!empty($search) && !empty($keyword)) {
             switch ($search) {
-                case 'subject/contents':
+                case 'all':
                     $query->where(function ($q) use ($keyword) {
                         $q->where('subject', 'like', "%{$keyword}%")
                             ->orWhere('contents', 'like', "%{$keyword}%");

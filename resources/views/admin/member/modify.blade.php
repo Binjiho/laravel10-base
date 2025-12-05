@@ -4,7 +4,7 @@
 @endsection
 
 @section('contents')
-    <div class="write-form-wrap" style="padding: 35px;">
+    <div class="write-form-wrap" style="font-size:14px;">
         <form action="" method="post" id="register-frm" enctype="multipart/form-data" data-case="user-{{ !empty($user->sid) ? 'modify' : 'create' }}" data-sid="{{ !empty($user) ? $user->sid : 0 }}">
             <fieldset>
                 @include("auth.signup.form.register-frm")

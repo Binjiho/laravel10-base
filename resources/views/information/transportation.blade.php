@@ -356,7 +356,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://apkass2026korea.org/transportation" class="btn btn-small trans-step type2">STEP 2</a><br>
+                                    <a href="{{ route('info.transportation') }}" class="btn btn-small trans-step type2">STEP 2</a><br>
                                     <strong>Incheon International Airport Terminal 1 <br class="m-hide">to the Hotel</strong>
                                 </td>
                                 <td class="text-left">
@@ -445,7 +445,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="https://apkass2026korea.org/transportation" class="btn btn-small trans-step type2">STEP 2</a><br>
+                                    <a href="{{ route('info.transportation') }}" class="btn btn-small trans-step type2">STEP 2</a><br>
                                     <strong>Incheon International Airport Terminal 1 <br>to the Hotel</strong>
                                 </td>
                                 <td class="text-left">
@@ -509,10 +509,10 @@
                 </div>
                 <div class="text-box">
                     <p class="tit">About K.ride – a helpful app for taxi users</p>
-                    <p>Please note that Uber is still being introduced, so availability is limited, and Grab doesn’t operate in Seoul or any other region of South Korea.</p>
-                    <p>Instead, we recommend using the K.ride application, which is well-suited for international visitors traveling to Seoul and other parts of the country.</p>
-                    <p>K.ride offers multilingual support, including Chinese, English, Japanese, and Korean, and allows payment with internationally issued credit cards. Additionally, many of the drivers are able to communicate in basic English, which can enhance convenience for non-Korean speakers. We encourage you to download the application in advance of your trip to Korea.</p>
-                    <p class="em">Scan the QR code to download k.ride app</p>
+                    <p>Please note that Uber is still being introduced, so availability is limited, and Grab doesn’t operate in Seoul or any other region of South Korea.<br>
+                    Instead, we recommend using the K.ride application, which is well-suited for international visitors traveling to Seoul and other parts of the country.<Br>
+                    K.ride offers multilingual support, including Chinese, English, Japanese, and Korean, and allows payment with internationally issued credit cards. Additionally, many of the drivers are able to communicate in basic English, which can enhance convenience for non-Korean speakers. We encourage you to download the application in advance of your trip to Korea.</p>
+                    <span class="em">Scan the QR code to download k.ride app</span>
                 </div>
             </div>
         </div>

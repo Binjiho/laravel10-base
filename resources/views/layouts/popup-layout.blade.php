@@ -6,7 +6,7 @@
 <body>
 
 <div id="popup-wrap">
-    <div style="padding: 35px;">
+    <div style="padding: 20px;">
         @yield('contents')
     </div>
 </div>

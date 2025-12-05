@@ -48,7 +48,7 @@ if (!function_exists('getDefaultUrl')) {
                 : url('auth/login');
         }
 
-        return url('/main');
+        return url('/');
     }
 }
 

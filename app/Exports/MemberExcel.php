@@ -43,6 +43,17 @@ class MemberExcel implements FromCollection, WithHeadings, ShouldAutoSize, WithE
             
             'Affiliation(Kor)',
             'Mobile Phone',
+            'Title',
+            'Degree',
+            'Gender',
+
+            'Address',
+            'City',
+            'Emergency Contact(Name)',
+            'Emergency Contact(Relation)',
+            'Emergency Contact(Email)',
+
+            'Source',
             'Join Date',
             'Registration',
             'Abstract',
@@ -64,6 +75,32 @@ class MemberExcel implements FromCollection, WithHeadings, ShouldAutoSize, WithE
             $affi.= '('.$data['sosok_kr'].')';
         }
 
+        $title = $userConfig['title'][$data['title']];
+        if($data['title'] == 'Z'){
+            $title.= '('.$data['title_etc'].')';
+        }
+
+        $degree = $userConfig['degree'][$data['degree']];
+        if($data['degree'] == 'Z'){
+            $degree.= '('.$data['degree_etc'].')';
+        }
+
+        $gender = $userConfig['gender'][$data['gender']];
+        if($data['gender'] == 'Z'){
+            $gender.= '('.$data['gender_etc'].')';
+        }
+
+        $selected = explode(',', $data['source']);
+        $labels = array();
+        foreach ($selected as $code) {
+            $label = $userConfig['source'][$code] ?? $code;
+            if ($code === 'Z' && !empty($data['source_etc'])) {
+                $label .= ' (' . $data['source_etc'] . ')';
+            }
+            $labels[] = $label;
+        }
+        $source = implode(', ',$labels);
+
         return [
             $this->total - ($this->row++),
             $reg_num ?? '',
@@ -73,6 +110,17 @@ class MemberExcel implements FromCollection, WithHeadings, ShouldAutoSize, WithE
 
             $affi ?? '',
             $data->mobile ?? '',
+            $title ?? '',
+            $degree ?? '',
+            $gender ?? '',
+
+            $data->address ?? '',
+            $data->city ?? '',
+            $data['contact_first_name'].' '.$data['contact_last_name'],
+            $data->contact_relation ?? '',
+            $data->contact_email ?? '',
+
+            $source ?? '',
             $data->created_at,
             'X',
             'X',

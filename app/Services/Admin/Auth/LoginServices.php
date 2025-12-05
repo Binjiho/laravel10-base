@@ -17,7 +17,7 @@ class LoginServices extends AppServices
         auth('admin')->logout();
         auth('web')->logout();
 
-        $ret_url = env('APP_URL').'/main';
+        $ret_url = env('APP_URL');
 
         return $this->returnJsonData('location', $this->ajaxActionLocation('replace', $ret_url ));
     }

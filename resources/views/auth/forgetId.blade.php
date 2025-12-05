@@ -21,7 +21,7 @@
                             </div>
                             <div class="input-box">
                                 <p>Last Name</p>
-                                <input type="text" name="last_name" id="last_name" class="form-item" placeholder="" enname>
+                                <input type="text" name="last_name" id="last_name" class="form-item" placeholder="" enname upperCase>
                                 <p class="mt-10">The last 4 digits of your phone number</p>
                                 <input type="text" name="mobile" id="mobile" class="form-item" placeholder="" maxlength="4" onlyNumber>
                                 <button type="submit" class="btn btn-find color-type1">Search</button>

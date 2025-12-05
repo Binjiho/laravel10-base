@@ -4,7 +4,7 @@
     <div class="header-wrap inner-layer">
 
         <h1 class="header-logo">
-            <a href="{{ route('main') }}">헤더 로고</a>
+            <a href="https://apkass2026korea.org/">헤더 로고</a>
         </h1>
 
         <div class="util-wrap">
@@ -27,10 +27,12 @@
             </div>
 
             <ul class="util-menu">
-                <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                <li><a href="https://apkass2026korea.org/"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+
+				
                 @guest('web')
-                    <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
-                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                    <!-- <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li> -->
                 @else
                     <li><a href="{{ route('mypage') }}"><img src="/assets/image/common/ic_signup_m.png" alt="">MYPAGE</a></li>
                     <li><a href="javascript:logout();"><img src="/assets/image/common/ic_login_m.png" alt="">LOGOUT</a></li>
@@ -54,21 +56,21 @@
                 <div class="dday-inner">
                     <img src="/assets/image/common/bell.svg" alt="">
                     <div class="text-wrap">
-                        <p class="dday">D - 000</p>
-                        <p class="today">Today YYYY-MM-DD</p>
+                        <p class="dday">{{ $ddayText ?? '' }}</p>
+                        <p class="today">Today, {{ date('Y-m-d') }}</p>
                     </div>
                 </div>
             </div>
             <ul class="util-menu">
-                <li><a href="#n"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
+                <li><a href="https://apkass2026korea.org/"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
                 @guest('web')
-                    <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
-                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
+                    <!-- <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li> -->
                 @else
-                    <li><a href="{{ route('mypage') }}"><img src="/assets/image/common/ic_signup_m.png" alt="">MYPAGE</a></li>
-                    <li><a href="javascript:logout();"><img src="/assets/image/common/ic_login_m.png" alt="">LOGOUT</a></li>
+                    <li><a href="{{ route('mypage') }}">MYPAGE</a></li>
+                    <li><a href="javascript:logout();">LOGOUT</a></li>
                     @if(isAdmin())
-                    <li><a href="{{ env('APP_URL') }}/admin" class="admin"><img src="/assets/image/common/ic_admin.svg" alt="">ADMIN</a></li>
+                    <li><a href="{{ env('APP_URL') }}/admin" class="admin"><img src="/assets/image/common/ic_admin_w.svg" alt="">ADMIN</a></li>
                     @endif
                 @endguest
             </ul>

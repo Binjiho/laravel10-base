@@ -18,6 +18,9 @@ class AccommodationController extends Controller
 
     public function acc(Request $request)
     {
+        view()->share([
+            'sub_key' => 'S1',
+        ]);
         return view('accommodation.acc');
     }
 

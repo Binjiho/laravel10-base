@@ -91,7 +91,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Location</th>
-                                <td class="text-left">Near Incheon International Airport with shuttle access.</td>
+                                <td class="text-left">Near Incheon International Airport with shuttle access</td>
                             </tr>
                         </thead>
                     </table>

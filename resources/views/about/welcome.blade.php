@@ -22,10 +22,10 @@
                     <div class="welcome-wrap">
                         <div class="text-con">
                             <p>Dear colleagues and distinguished guests,</p>
-                            <p>As the president of APKASS (Asia-Pacific Knee, Arthroscopy, Arthroplasty, Shoulder, and Sports Medicine Society) and a proud Korean, it is my great honor to host this conference in Incheon. </p>
-                            <p>APKASS has long been a leading organization in joint surgery, arthroscopy, and sports medicine, and our conference has become a key platform for advancing research and clinical practices. With the recent expansion to include Shoulder and Arthroplasty in 2025, APKASS continues to grow, addressing the diverse needs of our members and promoting advancements in musculoskeletal health.</p>
-                            <p>This year’s conference will bring together experts from various specialties, further strengthening APKASS’s position as a global leader in our field. We are honored to have specialists from renowned organizations such as ISAKOS, SLARD, AOSSM, ESSKA, and ICRS whose presence will offer invaluable opportunities for collaboration and knowledge exchange.</p>
-                            <p>I hope this conference provides you with opportunities for academic development, networking, and lasting connections. Once again, welcome to Incheon, and I look forward to the inspiring exchanges ahead.</p>
+                            <p>As the president of APKASS (Asia-Pacific Knee, Arthroscopy, Arthroplasty, Shoulder, and Sports Medicine Society) and a proud Korean, it is my great honor to host APKASS 2026 Korea & ICKAS 2026 in Incheon, Korea.</p>
+                            <p>APKASS has long been a leading organization in joint surgery, arthroscopy, and sports medicine, and APKASS conference has become a key platform for advancing research and clinical practices. With the recent expansion to include Shoulder and Arthroplasty in 2025, APKASS continues to grow, addressing the diverse needs of our members and promoting advancements in musculoskeletal health.</p>
+                            <p>This year’s conference will bring together experts from various specialties, further strengthening APKASS’s position as a global leader in our field. I am honored to have specialists from renowned organizations such as ISAKOS, SLARD, AOSSM, ESSKA, and ICRS whose presence will offer invaluable opportunities for collaboration and knowledge exchange.</p>
+                            <p>I hope this conference provides you with opportunities for academic development, networking, and lasting connections. Once again, welcome to Incheon, Korea, and I look forward to the inspiring exchanges ahead.</p>
                         </div>
                         <div class="name-box text-right">
                             <div class="img-wrap">
