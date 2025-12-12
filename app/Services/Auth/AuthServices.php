@@ -133,13 +133,13 @@ class AuthServices extends AppServices
             ]);
 
             return $this->returnJsonData('alert', [
-                'msg' => 'Available to use',
+                'msg' => '사용 가능한 의사면허번호입니다.',
             ]);
         } else {
             $this->setJsonData('focus', '#license_number');
 
             return $this->returnJsonData('alert', [
-                'msg' => 'This LicenseNumber is used. Please type in a new LicenseNumber',
+                'msg' => '이미 사용된 의사면허번호입니다.',
             ]);
         }
     }
@@ -166,6 +166,14 @@ class AuthServices extends AppServices
 
     public function changeCountryServices(Request $request)
     {
+        if(empty($request->country)){
+            $this->setJsonData('input', [
+                $this->ajaxActionInput('#register-frm input[name=ccode]', ''),
+            ]);
+
+            return $this->returnJson();
+        }
+
         $country = Country::findOrFail($request->country);
 
         $this->setJsonData('input', [
@@ -178,17 +186,20 @@ class AuthServices extends AppServices
 
     private function forgetUid(Request $request)
     {
-        $user = User::where(['last_name' => $request->last_name, 'del'=>'N'])->first();
+        $user = User::where('last_name', $request->last_name)
+            ->whereRaw("RIGHT(mobile, 4) = ?", [$request->mobile]) // <-- 이 부분이 수정되었습니다.
+            ->where('del', 'N')
+            ->first();
 
-        // 휴대폰번호 마지막 4자리 추출
-        $mobile     = preg_replace('/[^0-9]/', '', $user->mobile);
-        $lastFour   = substr($mobile, -4);
-
-        if ($lastFour != $request->mobile) {
-            return $this->returnJsonData('alert', [
-                'msg' => 'The mobile you entered is incorrect. Please try again',
-            ]);
-        }
+//        // 휴대폰번호 마지막 4자리 추출
+//        $mobile     = preg_replace('/[^0-9]/', '', $user->mobile);
+//        $lastFour   = substr($mobile, -4);
+//
+//        if ($lastFour != $request->mobile) {
+//            return $this->returnJsonData('alert', [
+//                'msg' => 'The mobile you entered is incorrect. Please try again',
+//            ]);
+//        }
 
         if(!empty($user)){
             $this->setJsonData('addCss', [
@@ -202,7 +213,7 @@ class AuthServices extends AppServices
             ]);
         }else{
             return $this->returnJsonData('alert', [
-                'msg' => 'The Last Name you entered is incorrect. Please try again',
+                'msg' => 'Please check that the information you entered is accurate.',
             ]);
         }
     }

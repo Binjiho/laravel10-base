@@ -31,10 +31,10 @@
 
 				
                 @guest('web')
-                    <!-- <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
-                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li> -->
+                    <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
                 @else
-                    <li><a href="{{ route('mypage') }}"><img src="/assets/image/common/ic_signup_m.png" alt="">MYPAGE</a></li>
+                    <li><a href="{{ route('mypage') }}"><img src="/assets/image/common/ic_signup_m.png" alt="">MY PAGE</a></li>
                     <li><a href="javascript:logout();"><img src="/assets/image/common/ic_login_m.png" alt="">LOGOUT</a></li>
                     @if(isAdmin())
                     <li><a href="{{ env('APP_URL') }}/admin" class="admin"><img src="/assets/image/common/ic_admin.svg" alt="">ADMIN</a></li>
@@ -64,8 +64,8 @@
             <ul class="util-menu">
                 <li><a href="https://apkass2026korea.org/"><img src="/assets/image/common/ic_home.svg" alt="">HOME</a></li>
                 @guest('web')
-                    <!-- <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
-                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li> -->
+                    <li><a href="{{ route('auth.signup') }}"><img src="/assets/image/common/ic_signup.svg" alt="">SIGN-UP</a></li>
+                    <li><a href="{{ route('login') }}"><img src="/assets/image/common/ic_login.svg" alt="">LOGIN</a></li>
                 @else
                     <li><a href="{{ route('mypage') }}">MYPAGE</a></li>
                     <li><a href="javascript:logout();">LOGOUT</a></li>

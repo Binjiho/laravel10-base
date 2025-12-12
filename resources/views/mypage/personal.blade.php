@@ -7,15 +7,6 @@
     <article class="sub-contents">
         <div class="sub-conbox inner-layer">
 
-{{--            <div class="sub-tab-wrap">--}}
-{{--                <ul class="sub-tab-menu">--}}
-{{--                    <li class="{{ ($sub_key ?? '') == 'S1' ? 'on' : '' }}"><a href="#n">Home</a></li>--}}
-{{--                    <li class="{{ ($sub_key ?? '') == 'S2' ? 'on' : '' }}"><a href="#n">Personal Information</a></li>--}}
-{{--                    <li class="{{ ($sub_key ?? '') == 'S3' ? 'on' : '' }}"><a href="#n">Registration</a></li>--}}
-{{--                    <li class="{{ ($sub_key ?? '') == 'S4' ? 'on' : '' }}"><a href="#n">Abstract Submission</a></li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-
             <ul class="write-wrap">
                 <li>
                     <div class="form-tit"><strong class="required">*</strong> Country of Residence</div>
@@ -38,14 +29,30 @@
                 </li>
 
                 @if(($user->country ?? '') =='1')
-                    <li>
-                        <div class="form-tit"><strong class="required">*</strong> 성명 (국문)</div>
-                        <div class="form-con">{{ $user->name_kr ?? '' }}</div>
+                <li>
+                    <div class="form-tit"><strong class="required">*</strong> 성명 (국문)</div>
+                    <div class="form-con">{{ $user->name_kr ?? '' }}</div>
+                </li>
+                @endif
+
+                <li>
+                    <div class="form-tit"><strong class="required">*</strong> Affiliation</div>
+                    <div class="form-con">
+                        {{ $user->affi ?? '' }}
+                    </div>
+                </li>
+
+                @if(($user->country ?? '') =='1')
+                    <li >
+                        <div class="form-tit"><strong class="required">*</strong> 소속 (국문)</div>
+                        <div class="form-con">
+                            {{ $user->sosok_kr ?? '' }}
+                        </div>
                     </li>
                 @endif
                 <li>
                     <div class="form-tit"><strong class="required">*</strong> Mobile</div>
-                    <div class="form-con">{{ $user->mobile ?? '' }}</div>
+                    <div class="form-con">+{{ $user->ccode ?? '' }} {{ $user->mobile ?? '' }}</div>
                 </li>
                 <li>
                     <div class="form-tit"><strong class="required">*</strong> Title</div>
@@ -76,10 +83,25 @@
                 </li>
                 @if(($user->country ?? '') =='1')
                     <li>
-                        <div class="form-tit"><strong class="required">*</strong> 의사면허번호</div>
-                        <div class="form-con">{{ $user->license_number ?? '' }}</div>
+                        <div class="form-tit"><strong class="required">*</strong> 의사면허번호 (숫자)</div>
+                        <div class="form-con">{{ ($user->license_yn ?? '') == 'N' ? '면허번호 없음' : $user->license_number ?? '' }}</div>
                     </li>
                 @endif
+
+                @if(($user->country ?? '') =='1')
+                    <li >
+                        <div class="form-tit"><strong class="required">*</strong> 주소 (국문)</div>
+                        <div class="form-con">
+                            <div class="form-group has-btn">
+                                {{ $user->zipcode ?? '' }}
+                            </div>
+                            <div class="form-group n2 mt-10">
+                                {{ $user->addr ?? '' }}
+                                {{ $user->addr2 ?? '' }}
+                            </div>
+                        </div>
+                    </li>
+                @else
                 <li>
                     <div class="form-tit"><strong class="required">*</strong> Address</div>
                     <div class="form-con">{{ $user->address ?? '' }}</div>
@@ -88,6 +110,8 @@
                     <div class="form-tit"><strong class="required">*</strong> City</div>
                     <div class="form-con">{{ $user->city ?? '' }}</div>
                 </li>
+                @endif
+
                 <li>
                     <div class="form-tit"><strong class="required">*</strong> Emergency Contact</div>
                     <div class="form-con">
@@ -118,7 +142,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="form-tit"><strong class="required">*</strong> Source</div>
+                    <div class="form-tit"><strong class="required">*</strong> How did you hear about APKASS 2026 Korea & ICKAS 2026?</div>
                     <div class="form-con">
                         @php
                             if(!empty($user)){

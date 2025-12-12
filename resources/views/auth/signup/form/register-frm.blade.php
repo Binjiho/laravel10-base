@@ -1,11 +1,25 @@
 <div class="con-tit-wrap">
     <h4 class="con-tit">Personal Information</h4>
+    <p class="text-blue text-right">* All fields marked an asterisk(<span class="required">*</span>) should be completed.</p>
+</div>
+<div class="bg-box type-signup">
+    <p class="tit">[결제 통화에 따른 Country of Residence 선택]</p>
+    <ul class="list-type list-type-bar">
+        <li><strong class="required">KRW</strong> : 'Country of Residence' 항목에서 <span class="required">'Korea, Republic of'</span> 선택 (대한민국에서 발급된 카드만 사용 가능)</li>
+        <li><strong class="text-red">USD</strong> : 'Country of Residence' 항목에서 <span class="required">'Korea, Republic of가 아닌 국가'</span> 선택 (해외에서 발급된 카드를 해외에서 사용 시에만 가능)</li>
+    </ul>
+    <p class="tit mt-20">[Country of Residence Selection Based on Payment Currency]</p>
+    <ul class="list-type list-type-bar">
+        <li><strong class="required">KRW</strong> : Select <span class="required">'Korea, Republic of'</span> in the 'Country of Residence' field (only cards issued in Korea can be used).</li>
+        <li><strong class="required">USD</strong> : Select a <span class="required">country other than 'Korea, Republic of'</span> in the 'Country of Residence' field (only cards issued outside Korea can be used. and the payment must be made outside Korea).</li>
+    </ul>
 </div>
 <ul class="write-wrap">
     @if (request()->routeIs('mypage*'))
         <li>
             <div class="form-tit"><strong class="required">*</strong> Country of Residence</div>
             <div class="form-con">
+                <input type="hidden" name="country" id="country" value="{{ $user->country }}" readonly>
                 {{ $country_list[$user->country]['name'] }}
             </div>
         </li>
@@ -43,27 +57,48 @@
     @endif
 
     @if(empty($user))
-    <li>
-        <div class="form-tit"><strong class="required">*</strong> ID (E-mail)</div>
-        <div class="form-con">
-            <div class="form-group has-btn">
-                <input type="text" class="form-item" name="uid" id="uid" data-chk="N" emailOnly>
-                <a href="javascript:;" id="uid_chk" class="btn btn-small color-type3">Check ID</a>
+        <li>
+            <div class="form-tit"><strong class="required">*</strong> ID (E-mail)</div>
+            <div class="form-con">
+                <div class="form-group has-btn">
+                    <input type="text" class="form-item" name="uid" id="uid" data-chk="N" emailOnly>
+                    <a href="javascript:;" id="uid_chk" class="btn btn-small color-type3">Check ID</a>
+                </div>
             </div>
-        </div>
-    </li>
-    <li>
-        <div class="form-tit"><strong class="required">*</strong> Password</div>
-        <div class="form-con">
-            <input type="password" name="password" id="password" class="form-item">
-        </div>
-    </li>
-    <li>
-        <div class="form-tit"><strong class="required">*</strong> Verify Password</div>
-        <div class="form-con">
-            <input type="password" name="repassword" id="repassword" class="form-item">
-        </div>
-    </li>
+        </li>
+        <li>
+            <div class="form-tit"><strong class="required">*</strong> Password</div>
+            <div class="form-con">
+                <input type="password" name="password" id="password" class="form-item">
+            </div>
+        </li>
+        <li>
+            <div class="form-tit"><strong class="required">*</strong> Verify Password</div>
+            <div class="form-con">
+                <input type="password" name="repassword" id="repassword" class="form-item">
+            </div>
+        </li>
+    @else
+        @if(checkUrl() != 'admin')
+        <li>
+            <div class="form-tit"><strong class="required">*</strong> Password</div>
+            <div class="form-con">
+                <input type="password" name="password" id="password" class="form-item">
+            </div>
+        </li>
+        <li>
+            <div class="form-tit"> New Password</div>
+            <div class="form-con">
+                <input type="password" name="newpassword" id="newpassword" class="form-item">
+            </div>
+        </li>
+        <li>
+            <div class="form-tit"> Verify Password</div>
+            <div class="form-con">
+                <input type="password" name="repassword" id="repassword" class="form-item">
+            </div>
+        </li>
+       @endif
     @endif
 
     <li>
@@ -84,13 +119,13 @@
     <li>
         <div class="form-tit"><strong class="required">*</strong> Affiliation</div>
         <div class="form-con">
-            <input type="text" name="affi" id="affi" value="{{ $user->affi ?? '' }}" class="form-item" enname>
+            <input type="text" name="affi" id="affi" value="{{ $user->affi ?? '' }}" class="form-item" noneKo>
         </div>
     </li>
     <li class="kr_li" style="{{ ($user->country ?? '') == '1' ? '' : 'display:none;' }}">
-        <div class="form-tit"><strong class="required">*</strong> 소속</div>
+        <div class="form-tit"><strong class="required">*</strong> 소속 (국문)</div>
         <div class="form-con">
-            <input type="text" name="sosok_kr" id="sosok_kr" value="{{ $user->sosok_kr ?? '' }}" class="form-item" onlyKo>
+            <input type="text" name="sosok_kr" id="sosok_kr" value="{{ $user->sosok_kr ?? '' }}" class="form-item" >
         </div>
     </li>
     <li>
@@ -105,17 +140,7 @@
                 <div>
                     <p>Phone Number</p>
                     <div class="form-group-text">
-                        @php
-                            $target_arr = array();
-                            if(!empty($user) && !empty($user->mobile)){
-                                $target_arr = explode('-',$user->mobile);
-                            }
-                        @endphp
-                        <input type="text" name="mobile1" id="mobile1" value="{{ $target_arr[0] ?? '' }}" onlyNumber class="form-item">
-                        <span class="text">-</span>
-                        <input type="text" name="mobile2" id="mobile2" value="{{ $target_arr[1] ?? '' }}" onlyNumber class="form-item">
-                        <span class="text">-</span>
-                        <input type="text" name="mobile3" id="mobile3" value="{{ $target_arr[2] ?? '' }}" onlyNumber class="form-item">
+                        <input type="text" name="mobile" id="mobile" value="{{ $user->mobile ?? '' }}" onlyNumber class="form-item">
                     </div>
                 </div>
             </div>
@@ -128,7 +153,7 @@
                 @foreach($userConfig['title'] as $key => $val)
                     <label class="radio-group"><input type="radio" name="title" id="title_{{ $key }}" value="{{ $key }}" {{ ($user->title ?? '') == $key ? 'checked' : '' }}>{{ $val }}</label>
                 @endforeach
-                    <input type="text" name="title_etc" id="title_etc" value="{{ $user['title_etc'] ?? '' }}" class="form-item" {{ ($user['title'] ?? '') == 'Z' ? '' : 'disabled' }} enname>
+                    <input type="text" name="title_etc" id="title_etc" value="{{ $user['title_etc'] ?? '' }}" class="form-item" {{ ($user['title'] ?? '') == 'Z' ? '' : 'disabled' }} noneKo>
             </div>
         </div>
     </li>
@@ -160,7 +185,7 @@
 
     @if (request()->routeIs('mypage*'))
         <li class="kr_li" style="{{ ($user->country ?? '') == '1' ? '' : 'display:none;' }}">
-            <div class="form-tit"><strong class="required">*</strong> 의사면허번호</div>
+            <div class="form-tit"><strong class="required">*</strong> 의사면허번호 (숫자)</div>
             <div class="form-con">
                 <div class="form-group has-btn">
                     {{ ($user->license_yn ?? '') == 'N' ? '면허번호 없음' : $user->license_number ?? '' }}
@@ -170,7 +195,7 @@
 
     @else
         <li class="kr_li" style="{{ ($user->country ?? '') == '1' ? '' : 'display:none;' }}">
-            <div class="form-tit"><strong class="required">*</strong> 의사면허번호</div>
+            <div class="form-tit"><strong class="required">*</strong> 의사면허번호 (숫자)</div>
             <div class="form-con">
                 <div class="form-group has-btn">
                     <input type="text" class="form-item" name="license_number" id="license_number" value="{{ $user->license_number ?? '' }}" data-chk="N" onlyNumber>
@@ -183,18 +208,35 @@
         </li>
     @endif
 
-    <li>
+    <li class="en_li" style="{{ ($user->country ?? '') == '1' ? 'display:none;' : '' }}">
         <div class="form-tit"><strong class="required">*</strong> Address</div>
         <div class="form-con">
-            <input type="text" name="address" id="address" value="{{ $user->address ?? '' }}" class="form-item" enname>
+            <input type="text" name="address" id="address" value="{{ $user->address ?? '' }}" class="form-item" noneKo>
         </div>
     </li>
-    <li>
+    <li class="en_li" style="{{ ($user->country ?? '') == '1' ? 'display:none;' : '' }}">
         <div class="form-tit"><strong class="required">*</strong> City</div>
         <div class="form-con">
-            <input type="text" name="city" id="city" value="{{ $user->city ?? '' }}" class="form-item" enname>
+            <input type="text" name="city" id="city" value="{{ $user->city ?? '' }}" class="form-item" noneKo>
         </div>
     </li>
+
+        <li class="kr_li" style="{{ ($user->country ?? '') == '1' ? '' : 'display:none;' }}">
+            <div class="form-tit"><strong class="required">*</strong> 주소 (국문)</div>
+            <div class="form-con">
+                <div class="form-group has-btn">
+                    <input type="text" name="zipcode" id="zipcode" value="{{ $user->zipcode ?? '' }}" readonly class="form-item">
+                    <button type="button" onclick="openDaumPostcode(''); return false;" class="btn btn-small color-type3">우편번호 검색</button>
+                </div>
+                <div class="form-group n2 mt-10">
+                    <input type="text" name="addr" id="addr" value="{{ $user->addr ?? '' }}" class="form-item" readonly>
+                    <input type="text" name="addr2" id="addr2" value="{{ $user->addr2 ?? '' }}" class="form-item">
+                </div>
+            </div>
+        </li>
+
+
+
     <li>
         <div class="form-tit"><strong class="required">*</strong> Emergency Contact</div>
         <div class="form-con">
@@ -230,7 +272,7 @@
 </div>
 <ul class="write-wrap">
     <li>
-        <div class="form-tit"><strong class="required">*</strong> Source</div>
+        <div class="form-tit"><strong class="required">*</strong>How did you hear about APKASS 2026 Korea & ICKAS 2026?</div>
         <div class="form-con">
             <div class="checkbox-wrap cst full">
 
@@ -247,19 +289,37 @@
 </ul>
 
 @section('reg-script')
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
+        function openDaumPostcode(){
+
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    $(":text[name='zipcode']").val(data.zonecode);
+                    $(":text[name='addr']").val(data.address).focus();
+                }
+            }).open();
+        }
+
         $(document).on('change', "[name='country']" , function() {
             const _val = $(this).val();
 
             if(_val == '1' /*kr_li*/){
                 $(".kr_li").show();
+                $(".en_li").hide();
+                $("[name='address']").val('');
+                $("[name='city']").val('');
             }else{
+                $(".en_li").show();
                 $(".kr_li").hide();
                 $("[name='nationality']").val('');
                 $("[name='name_kr']").val('');
                 $("[name='sosok_kr']").val('');
                 $("[name='license_number']").val('');
                 $("[name='license_yn']").val('');
+                $("[name='zipcode']").val('');
+                $("[name='addr']").val('');
+                $("[name='addr2']").val('');
             }
 
             callAjax(dataUrl, {
@@ -382,61 +442,63 @@
             }
             @endif
             @if (request()->routeIs('mypage*') === false)
-                if (isEmpty($("select[name='country']").val())) {
-                    alert('Please select your country.');
+                if (isEmpty($("[name='country']").val())) {
+                    alert('Please select your Country of Residence.');
                     $("input[name='country']").focus();
                     return false;
                 }
-                if ( $("select[name='country']").val() == '1' ) {
+                if ( $("[name='country']").val() == '1' ) {
                     if (isEmpty($("select[name='nationality']").val())) {
-                        alert('Please select your country.');
+                        alert('Please select your Nationality.');
                         $("input[name='nationality']").focus();
                         return false;
                     }
                 }
             @endif
             @if( empty($user) )
-            if (isEmpty($("input[name='uid']").val())) {
-                alert('Please enter ID.');
-                $("input[name='uid']").focus();
-                return false;
-            }
-            if ( $("input[name='uid']").data('chk') == 'N' ) {
-                alert('Please check ID.');
-                $("input[name='uid']").focus();
-                return false;
-            }
+                if (isEmpty($("input[name='uid']").val())) {
+                    alert('Please enter ID.');
+                    $("input[name='uid']").focus();
+                    return false;
+                }
+                if ( $("input[name='uid']").data('chk') == 'N' ) {
+                    alert('Please check ID.');
+                    $("input[name='uid']").focus();
+                    return false;
+                }
 
-            if (isEmpty($("#password").val())) {
-                alert('Please enter Password.');
-                $("#password").focus();
-                return false;
-            }
-            // if (isValidPassword($("#password").val()) === false) {
-            //     alert("Please check Password.");
-            //     $("#password").focus();
-            //     return false;
-            // }
-            // if ( $("#password").val().length < 4 ) {
-            //     alert('비밀번호는 최소 4자로 입력해주세요.');
-            //     $("#password").focus();
-            //     return false;
-            // }
-            // if ( $("#password").val().length > 12 ) {
-            //     alert('비밀번호는 최대 12자로 입력해주세요.');
-            //     $("#password").focus();
-            //     return false;
-            // }
-            if (isEmpty($("#repassword").val())) {
-                alert('Please enter Verify Password.');
-                $("#repassword").focus();
-                return false;
-            }
-            if ( $("#password").val() != $("#repassword").val()) {
-                alert('Please enter the same password you entered.');
-                $("#repassword").focus();
-                return false;
-            }
+                if (isEmpty($("#password").val())) {
+                    alert('Please enter Password.');
+                    $("#password").focus();
+                    return false;
+                }
+
+                if (isEmpty($("#repassword").val())) {
+                    alert('Please enter Verify Password.');
+                    $("#repassword").focus();
+                    return false;
+                }
+                if ( $("#password").val() != $("#repassword").val()) {
+                    alert('Please enter the same password you entered.');
+                    $("#repassword").focus();
+                    return false;
+                }
+            @else
+                @if(checkUrl() != 'admin')
+                if (isEmpty($("#password").val())) {
+                    alert('Please enter Password.');
+                    $("#password").focus();
+                    return false;
+                }
+
+                if (!isEmpty($("#newpassword").val())) {
+                    if ( $("#newpassword").val() != $("#repassword").val()) {
+                        alert('Please enter the same password you entered.');
+                        $("#repassword").focus();
+                        return false;
+                    }
+                }
+               @endif
             @endif
 
 
@@ -446,14 +508,14 @@
                 return false;
             }
             if (isEmpty($("#last_name").val())) {
-                alert('Please enter First Name.');
+                alert('Please enter Last Name.');
                 $("#last_name").focus();
                 return false;
             }
 
-            if ( $("select[name='country']").val() == '1' ) {
+            if ( $("[name='country']").val() == '1' ) {
                 if (isEmpty($("#name_kr").val())) {
-                    alert('Please enter 성명.');
+                    alert('성명을 입력해 주세요.');
                     $("#name_kr").focus();
                     return false;
                 }
@@ -463,26 +525,16 @@
                 $("#affi").focus();
                 return false;
             }
-            if ( $("select[name='country']").val() == '1' ) {
+            if ( $("[name='country']").val() == '1' ) {
                 if (isEmpty($("#sosok_kr").val())) {
-                    alert('Please enter 소속.');
+                    alert('소속을 입력해 주세요.');
                     $("#sosok_kr").focus();
                     return false;
                 }
             }
-            if (isEmpty($("#mobile1").val())) {
+            if (isEmpty($("#mobile").val())) {
                 alert('Please enter Phone Number.');
-                $("#mobile1").focus();
-                return false;
-            }
-            if (isEmpty($("#mobile2").val())) {
-                alert('Please enter Phone Number.');
-                $("#mobile2").focus();
-                return false;
-            }
-            if (isEmpty($("#mobile3").val())) {
-                alert('Please enter Phone Number.');
-                $("#mobile3").focus();
+                $("#mobile").focus();
                 return false;
             }
 
@@ -525,15 +577,15 @@
             }
 
             @if (request()->routeIs('mypage*') === false)
-            if ( $("select[name='country']").val() == '1' ) {
+            if ( $("[name='country']").val() == '1' ) {
                 if ( $("#license_yn").is(":checked") === false ) {
                     if (isEmpty($("input[name='license_number']").val())) {
-                        alert('Please enter LicenseNumber.');
+                        alert('의사면허번호를 입력해 주세요.');
                         $("input[name='license_number']").focus();
                         return false;
                     }
                     if ( $("input[name='license_number']").data('chk') == 'N' ) {
-                        alert('Please check LicenseNumber.');
+                        alert('의사면허번호 중복확인을 진행해 주세요.');
                         $("input[name='license_number']").focus();
                         return false;
                     }
@@ -541,18 +593,31 @@
             }
             @endif
 
-            if (isEmpty($("#address").val())) {
-                alert('Please enter Address.');
-                $("#address").focus();
-                return false;
+
+            if ( $("[name='country']").val() == '1' ) {
+                if (isEmpty($("#zipcode").val())) {
+                    alert('주소를 입력해 주세요.');
+                    $("#zipcode").focus();
+                    return false;
+                }
+                if (isEmpty($("#addr2").val())) {
+                    alert('주소를 입력해 주세요.');
+                    $("#addr2").focus();
+                    return false;
+                }
+            }else{
+                if (isEmpty($("#address").val())) {
+                    alert('Please enter Address.');
+                    $("#address").focus();
+                    return false;
+                }
+                if (isEmpty($("#city").val())) {
+                    alert('Please enter City.');
+                    $("#city").focus();
+                    return false;
+                }
             }
 
-
-            if (isEmpty($("#city").val())) {
-                alert('Please enter City.');
-                $("#city").focus();
-                return false;
-            }
             if (isEmpty($("#contact_first_name").val())) {
                 alert('Please enter Emergency Contact First Name.');
                 $("#contact_first_name").focus();
@@ -575,7 +640,7 @@
             }
 
             if ( $("input[name='source[]']:checked").length < 1) {
-                alert('Please check Source.');
+                alert('Please check ‘How did you hear about APKASS 2026 Korea & ICKAS 2026’ field.');
                 $("input[name='source[]']").focus();
                 return false;
             }

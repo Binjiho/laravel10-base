@@ -157,6 +157,11 @@
 .con-tit-wrap {
     margin: 20px 0 15px;
 }
+.con-tit-wrap:has(p) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .con-tit {
     position: relative;
     padding-left: 14px;
@@ -1201,4 +1206,24 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* Find pw 수정 - 25.12.10, ma.kal */
+.btn-wrap.type-pw {
+    justify-content: start;
+}
+
+
+/* sign up 수정 - 25.12.11, ma.kal */
+.bg-box.type-signup {
+    margin-bottom: 20px;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #f2f6fb;
+}
+.bg-box.type-signup .tit {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #122f58;
 }

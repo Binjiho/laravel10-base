@@ -55,7 +55,6 @@
                             <input type="checkbox" name="agree" id="agree" value="Y" {{ ($user->agree ?? '') == 'Y' ? 'checked' : '' }}>I agree to the collection and use of my personal information.
                         </label>
                     </div>
-                    <p class="text-blue text-right">* All fields marked an asterisk(<span class="required">*</span>) should be completed.</p>
 
                     @include("auth.signup.form.register-frm")
 
@@ -67,7 +66,7 @@
                         <li>
                             <div class="form-con">
                                 @include('components.captcha')
-                                <p class="text-blue mt-10">* For information security, you can register as a member after entering the text written below.</p>
+                                <p class="text-blue mt-10">* For information security, you can register as a member after entering the text written above.</p>
                             </div>
                         </li>
                     </ul>

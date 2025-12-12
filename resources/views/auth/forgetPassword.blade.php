@@ -22,19 +22,26 @@
                             <p>
                                 If you do not remember your password, please enter your ID(Email).<br>
                                 Temporary password will be sent out to your e-mail. <br>
-                                After you login with the temporary password, you may change to a new password at personal information.
+                                After logging in with the temporary password, you can change it under My Page &gt; Personal Information.
                             </p>
                             <div class="input-box mt-20">
                                 <p>ID (E-mail)</p>
                                 <input type="text" name="uid" id="uid" class="form-item" placeholder="ID (E-mail)" emailOnly>
                                 <button type="submit" class="btn btn-find color-type1">Find Password</button>
                             </div>
-                            <p class="mt-10 help-text">- If you don’t remember your e-mail address, please contact the secretariat.</p>
+                            <p class="mt-10 help-text">- If you do not remember your e-mail address, please proceed with the “Find ID” step first.</p>
+                            <!-- 25.12.10 -->
+                            <div class="btn-wrap type-pw mt-10">
+                                <a href="{{ route('auth.forget-id') }}" class="btn btn-small btn-line color-type1">Find ID </a>
+                            </div>
+                            <!--// 25.12.10 -->
 
                             {{-- 비밀번호 카운팅 메세지 --}}
                             <div class="result-conbox text-center" style="display: none;">
-                                <p>The reset password is <span class="text-blue" id="tempPassword">oooo</span>.</p>
+                                <p>The temporary password is <span class="text-blue" id="tempPassword">oooo</span>.</p>
                                 The displayed password will disappear after 5 minutes (<span class="count">00:05:00</span>).
+                                <br>
+                                You may also check the temporary password sent to your email.
                             </div>
                         </fieldset>
                     </form>

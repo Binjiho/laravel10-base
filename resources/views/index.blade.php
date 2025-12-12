@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#n">
+                    <a href="/mypage/">
                         <p>MY PAGE</p>
                         <div class="icon">
                             <img src="/assets/image/main/ico_quick04.png" alt="">

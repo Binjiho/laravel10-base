@@ -10,31 +10,31 @@
     <tbody>
     <tr>
         <td style="border-bottom: 1px solid #ddd;padding: 0;text-align: center;text-align: center;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;font-size: 26px;color: #050505;">
-            <img src="{{ env("APP_URL") }}/assets/image/mail/mail_header.png" alt="" style="display: inline-block;border:0 none;vertical-align: top;" />
+            <img src="{{ env('APP_URL') }}/assets/image/mail/mail_header.png" alt="" style="display: inline-block;border:0 none;vertical-align: top;" />
         </td>
     </tr>
     <tr>
-        <td style="padding: 30px 30px 90px;font-size: 16px;line-height: 1.7;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;box-sizing:border-box;">
+        <td style="padding: 0 0 90px;font-size: 16px;line-height: 1.7;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;box-sizing:border-box;">
             <table style="width: 100%;border-collapse: collapse;border-spacing: 0;">
                 <tbody>
                 <tr>
-                    <th scope="col" style="text-align: left; padding-bottom: 30px;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;font-size: 26px;font-weight: 400;line-height: 1.5;">
+                    <th scope="col" style="padding:30px; background-color:#efefef; text-align: center;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;font-size: 26px;font-weight: 400;line-height: 1.5;">
                         <strong style="font-weight: 700;">Welcome to APKASS 2026 Korea & ICKAS 2026!</strong>
                     </th>
                 </tr>
                 <tr>
-                    <td scope="col" style="padding-bottom: 30px;font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;font-size: 16px;font-weight: 400;text-align: left;line-height: 1.7;">
-                        Dear {{ $user->first_name.' '.$user->last_name }}.<br><br>
+                    <td scope="col" style="padding:30px; font-family: 'Malgun Gothic', '맑은고딕', '돋움', 'dotum', 'Arial', sans-serif;font-size: 16px;font-weight: 400;text-align: left;line-height: 1.7;">
+                        Dear {{ $user->first_name.' '.$user->last_name }},<br><br>
                         Thank you for signing up for the APKASS 2026 Korea & ICKAS 2026.<br>
                         Your  account has been successfully created.<br><br>
                         You can modify the information associated with your account by logging into the website and accessing 'MY PAGE.' If you are unable to make
-                        changes on 'MY PAGE,’ <br><br>
+                        changes on 'MY PAGE,’ <br>
                         Please contact the secretariat.
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-top: 50px;text-align: center;">
-                        <a href="{{ env("APP_URL") }}" target="_blank"><img src="{{ env("APP_URL") }}/assets/image/mail/btn_mail_home.png" alt="홈페이지 바로가기"></a>
+                        <a href="{{ env('APP_URL') }}" target="_blank"><img src="{{ env('APP_URL') }}/assets/image/mail/btn_mail_home.png" alt="홈페이지 바로가기"></a>
                     </td>
                 </tr>
                 </tbody>
@@ -43,7 +43,7 @@
     </tr>
     <tr>
         <td>
-            <img src="{{ env("APP_URL") }}/assets/image/mail/mail_footer.png" alt="" style="display: inline-block;border:0 none;vertical-align: top;" />
+            <img src="{{ env('APP_URL') }}/assets/image/mail/mail_footer.png" alt="" style="display: inline-block;border:0 none;vertical-align: top;">
         </td>
     </tr>
     </tbody>

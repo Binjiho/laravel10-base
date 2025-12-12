@@ -99,8 +99,8 @@ class MailRealSendServices extends AppServices
 
                 // 특정 ip 예외처리
                 switch ($_SERVER['REMOTE_ADDR']) {
-                    case '218.235.94.217':
-                        $receiver_email = 'sh.han@m2community.co.kr';
+                    case '218.235.94.247':
+                        $receiver_email = 'jh2.park@m2community.co.kr';
                         break;
                 }
 

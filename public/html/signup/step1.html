@@ -70,11 +70,27 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                             <input type="checkbox" name="chk" id="chk1">I agree to the collection and use of my personal information.
                         </label>
                     </div>
-                    <p class="text-blue text-right">* All fields marked an asterisk(<span class="required">*</span>) should be completed.</p>
 
                     <div class="con-tit-wrap">
                         <h4 class="con-tit">Personal Information</h4>
+                        <p class="text-blue text-right">* All fields marked an asterisk(<span class="required">*</span>) should be completed.</p>
                     </div>
+
+                    <!-- 25.12.11 -->
+                    <div class="bg-box type-signup">
+                        <p class="tit">결제 통화에 따른 Country of Residence 선택</p>
+                        <ul class="list-type list-type-bar">
+                            <li><strong class="text-red">KRW</strong> : 'Country of Residence' 항목에서 <span class="text-red">'Korea, Republic of'</span> 선택 (대한민국에서 발급된 카드만 사용 가능)</li>
+                            <li><strong class="text-red">USD</strong> : 'Country of Residence' 항목에서 <span class="text-red">'Korea, Republic of가 아닌 국가'</span> 선택 (해외에서 발급된 카드를 해외에서 사용 시에만 가능)</li>
+                        </ul>
+                        <p class="tit mt-20">Country of Residence Selection Based on Payment Currency</p>
+                        <ul class="list-type list-type-bar">
+                            <li><strong class="text-red">KRW</strong> : Select <span class="text-red">'Korea, Republic of'</span> in the 'Country of Residence' field (only cards issued in Korea can be used).</li>
+                            <li><strong class="text-red">USD</strong> : Select a <span class="text-red">country other than 'Korea, Republic of'</span> in the 'Country of Residence' field (only cards issued outside Korea can be used. and the payment must be made outside Korea).</li>
+                        </ul>
+                    </div>
+                    <!--// 25.12.11 -->
+
                     <ul class="write-wrap">
                         <li>
                             <div class="form-tit"><strong class="required">*</strong> Country of Residence</div>
@@ -214,6 +230,19 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                             </div>
                         </li>
                         <li>
+                            <div class="form-tit"><strong class="required">*</strong> 주소</div>
+                            <div class="form-con">
+                                <div class="form-group has-btn">
+                                    <input type="text" class="form-item" name="" id="">
+                                    <a href="#n" id="" class="btn btn-small color-type3">우편번호 찾기</a>
+                                </div>
+                                <div class="form-group n2 mt-10">
+                                    <input type="text" class="form-item" name="" id="">
+                                    <input type="text" class="form-item" name="" id="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
                             <div class="form-tit"><strong class="required">*</strong> Emergency Contact</div>
                             <div class="form-con">
                                 <ul class="write-wrap">
@@ -274,7 +303,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/include/header.inc';
                                     <img src="/assets/image/sub/ic_refresh.png" class="refresh" onclick="refresh_captcha();return false;">
                                     <input type="text" name="captcha" id="captcha" class="form-item">
                                 </div>
-                                <p class="text-blue mt-10">* For information security, you can register as a member after entering the text written below.</p>
+                                <p class="text-blue mt-10">* For information security, you can register as a member after entering the text written above.</p>
                             </div>
                         </li>
                     </ul>

@@ -53,7 +53,6 @@ class User extends Authenticatable
 
     public function setByData($data)
     {
-        $mobile = $data['mobile1']."-".$data['mobile2']."-".$data['mobile3'];
         $source = implode(',',$data['source']);
         
         if (empty($this->sid)) { /* 최초등록 */
@@ -73,7 +72,7 @@ class User extends Authenticatable
         $this->affi = trim($data['affi']) ?? null;
 
         $this->ccode = trim($data['ccode']) ?? null;
-        $this->mobile = $mobile ?? null;
+        $this->mobile = $data['mobile'] ?? null;
         $this->title = trim($data['title']) ?? null;
         $this->title_etc = trim($data['title_etc']) ?? null;
         $this->degree = trim($data['degree']) ?? null;
@@ -86,6 +85,10 @@ class User extends Authenticatable
 
         $this->address = trim($data['address']) ?? null;
         $this->city = trim($data['city']) ?? null;
+        $this->zipcode = trim($data['zipcode']) ?? null;
+        $this->addr = trim($data['addr']) ?? null;
+        $this->addr2 = trim($data['addr2']) ?? null;
+
         $this->contact_first_name = trim($data['contact_first_name']) ?? null;
         $this->contact_last_name = trim($data['contact_last_name']) ?? null;
         $this->contact_relation = trim($data['contact_relation']) ?? null;
@@ -98,6 +101,11 @@ class User extends Authenticatable
 
     public function setByModifyData($data)
     {
+        if(!empty($data['newpassword'])){
+            $this->password = Hash::make(trim($data['newpassword']));
+            $this->password_at = date('Y-m-d H:i:s');
+        }
+
         $mobile = $data['mobile1']."-".$data['mobile2']."-".$data['mobile3'];
         $source = implode(',',$data['source']);
 
@@ -111,7 +119,7 @@ class User extends Authenticatable
         $this->sosok_kr = trim($data['sosok_kr']) ?? null;
         $this->affi = trim($data['affi']) ?? null;
 
-        $this->mobile = $mobile ?? null;
+        $this->mobile = $data['mobile'] ?? null;
         $this->title = trim($data['title']) ?? null;
         $this->title_etc = trim($data['title_etc']) ?? null;
         $this->degree = trim($data['degree']) ?? null;

@@ -42,17 +42,31 @@ class MypageServices extends AppServices
         $this->transaction();
 
         try {
-            $user = thisUser();
-            $user->setByModifyData($request);
-            $user->update();
 
-            $this->dbCommit('사용자 - 회원정보 수정');
+            $user = User::findOrFail($request->sid);
 
-            return $this->returnJsonData('alert', [
-                'case' => true,
-                'msg' => '수정 되었습니다.',
-                'location' => $this->ajaxActionLocation('replace', route('mypage.personal')),
-            ]);
+            $inputPassword = trim($request['password']);
+
+            if ( (Hash::check($inputPassword, $user->password) ) || masterIp()) {
+
+                $user->setByModifyData($request);
+                $user->update();
+
+                $this->dbCommit('사용자 - 회원정보 수정');
+
+                return $this->returnJsonData('alert', [
+                    'case' => true,
+                    'msg' => '수정 되었습니다.',
+                    'location' => $this->ajaxActionLocation('replace', route('mypage.personal')),
+                ]);
+
+            } else {
+                return $this->returnJsonData('alert', [
+                    'msg' => 'Passwords do not match.',
+                ]);
+            }
+            
+
         } catch (\Exception $e) {
             return $this->dbRollback($e);
         }
